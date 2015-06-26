@@ -94,9 +94,20 @@ namespace MiscChallenges
 			var sw = new Stopwatch();
 			using (var str = challengeData == null ? null : new StringReader(challengeData))
 			{
-				sw.Start();
-				strResult = challenge.Solve(str);
-				sw.Stop();
+				try
+				{
+					sw.Start();
+					strResult = challenge.Solve(str);
+					sw.Stop();
+				}
+				catch (Exception ex)
+				{
+					sw.Stop();
+					svOutput.ScrollToTop();
+					tbOutput.Foreground = new SolidColorBrush(Colors.Red);
+					tbOutput.Text = "Error: " + ex.Message + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
+					return;
+				}
 			}
 			var strResultString = challenge.RetrieveSampleOutput();
 			var isResult = strResultString != null && _originalInput;
