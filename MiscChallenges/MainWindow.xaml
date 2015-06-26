@@ -1,0 +1,29 @@
+﻿<Window x:Class="MiscChallenges.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="GrdTop">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="389*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" >
+                <TreeView x:Name="tvChallenges" VerticalContentAlignment="Stretch"/>
+                <!--
+                <ListBox x:Name="lbChallenges" VerticalContentAlignment="Stretch"/>
+                -->
+            </ScrollViewer>
+            <Button Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="RunChallenges">Run</Button>
+        </Grid>
+        <ScrollViewer x:Name="svText"  Grid.Column="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
+            <TextBlock x:Name="tbOutput" FontFamily="Courier New" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
