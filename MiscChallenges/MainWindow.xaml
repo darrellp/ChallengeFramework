@@ -12,12 +12,16 @@
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="35"/>
+                <RowDefinition Height="20	"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" >
                 <TreeView x:Name="tvChallenges" VerticalContentAlignment="Stretch" SelectedItemChanged="tvChallenges_SelectedItemChanged" Background="White" Foreground="{x:Null}"/>
             </ScrollViewer>
             <Button Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="RunChallenges">Run</Button>
+            <Button Content="Cancel" Grid.Row="2" Click="CancelChallenge"/>
+            <Button Content="Visit URL" Grid.Row="3" Click="VisitURL"/>
         </Grid>
         <Grid Grid.Column="2">
         	<Grid.RowDefinitions>

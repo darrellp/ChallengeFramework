@@ -118,6 +118,11 @@ namespace MiscChallenges
 			tbOutput.Text = strResult + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
 		}
 
+		private void CancelChallenge(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
+		}
+
 		private void tbxInput_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
 		{
 			if (!_changingSelection)
@@ -138,6 +143,11 @@ namespace MiscChallenges
 			var challengeData = GetChallengeData(challengeInfo.Challenge);
 			tbxInput.Text = challengeData;
 			_changingSelection = false;
+		}
+
+		private void VisitURL(object sender, System.Windows.RoutedEventArgs e)
+		{
+			// TODO: Add event handler implementation here.
 		}
 	}
 }
