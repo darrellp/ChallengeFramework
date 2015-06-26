@@ -15,6 +15,9 @@ namespace MiscChallenges
 	/// </summary>
 	public partial class MainWindow
 	{
+		bool _originalInput = true;
+		private bool _changingSelection = false;
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -64,6 +67,18 @@ namespace MiscChallenges
 				FirstOrDefault();
 		}
 
+		private string GetChallengeData(IChallenge challenge)
+		{
+			var challengeDataString = challenge.RetrieveSampleInput();
+			var isChallengeData = challengeDataString != null;
+			string challengeData = null;
+
+			if (isChallengeData)
+			{
+				challengeData = challengeDataString.Substring(Environment.NewLine.Count());
+			}
+			return challengeData;
+		}
 
 		private void RunChallenges(object sender, RoutedEventArgs e)
 		{
@@ -73,14 +88,8 @@ namespace MiscChallenges
 				return;
 			}
 			var challenge = challengeInfo.Challenge;
-			var challengeDataString = challenge.RetrieveSampleInput();
-			var isChallengeData = challengeDataString != null;
-			string challengeData = null;
+			var challengeData = tbxInput.Text;
 
-			if (isChallengeData)
-			{
-				challengeData = challengeDataString.Substring(Environment.NewLine.Count());
-			}
 			string strResult;
 			var sw = new Stopwatch();
 			using (var str = challengeData == null ? null : new StringReader(challengeData))
@@ -90,12 +99,34 @@ namespace MiscChallenges
 				sw.Stop();
 			}
 			var strResultString = challenge.RetrieveSampleOutput();
-			var isResult = strResultString != null;
+			var isResult = strResultString != null && _originalInput;
 
 			var success = isResult && strResult == strResultString.Substring(Environment.NewLine.Count());
-			svText.ScrollToTop();
+			svOutput.ScrollToTop();
 			tbOutput.Foreground = new SolidColorBrush(isResult ? (success ? Colors.Green : Colors.Red) : Colors.Black);
 			tbOutput.Text = strResult + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
+		}
+
+		private void tbxInput_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+		{
+			if (!_changingSelection)
+			{
+				_originalInput = false;
+			}
+		}
+
+		private void tvChallenges_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+		{
+			_originalInput = true;
+			_changingSelection = true;
+			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
+			if (challengeInfo == null)
+			{
+				return;
+			}
+			var challengeData = GetChallengeData(challengeInfo.Challenge);
+			tbxInput.Text = challengeData;
+			_changingSelection = false;
 		}
 	}
 }
