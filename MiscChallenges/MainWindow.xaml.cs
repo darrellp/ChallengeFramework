@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -70,10 +71,9 @@ namespace MiscChallenges
 		private string GetChallengeData(IChallenge challenge)
 		{
 			var challengeDataString = challenge.RetrieveSampleInput();
-			var isChallengeData = challengeDataString != null;
 			string challengeData = null;
 
-			if (isChallengeData)
+			if (challengeDataString != null)
 			{
 				challengeData = challengeDataString.Substring(Environment.NewLine.Count());
 			}
@@ -89,25 +89,36 @@ namespace MiscChallenges
 			}
 			var challenge = challengeInfo.Challenge;
 			var challengeData = tbxInput.Text;
+			var error = false;
 
-			string strResult;
+			string strResult = string.Empty;
 			var sw = new Stopwatch();
 			using (var str = challengeData == null ? null : new StringReader(challengeData))
 			{
-				try
+				Task<string> task = new Task<string>(() =>
 				{
-					sw.Start();
-					strResult = challenge.Solve(str);
-					sw.Stop();
-				}
-				catch (Exception ex)
-				{
-					sw.Stop();
-					svOutput.ScrollToTop();
-					tbOutput.Foreground = new SolidColorBrush(Colors.Red);
-					tbOutput.Text = "Error: " + ex.Message + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
-					return;
-				}
+					try
+					{
+						sw.Start();
+						strResult = challenge.Solve(str);
+						sw.Stop();
+					}
+					catch (Exception ex)
+					{
+						sw.Stop();
+						error = true;
+						strResult = "Error: " + ex.Message + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
+					}
+					return strResult;
+				});
+			}
+
+			if (error)
+			{
+				svOutput.ScrollToTop();
+				tbOutput.Foreground = new SolidColorBrush(Colors.Red);
+				tbOutput.Text = strResult;
+				return;
 			}
 			var strResultString = challenge.RetrieveSampleOutput();
 			var isResult = strResultString != null && _originalInput;
