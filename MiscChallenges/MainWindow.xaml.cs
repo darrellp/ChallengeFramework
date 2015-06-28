@@ -17,15 +17,24 @@ namespace MiscChallenges
 	/// </summary>
 	public partial class MainWindow
 	{
-		bool _originalInput = true;
+		#region Private Variables
+		private bool _originalInput = true;
 		private bool _changingSelection;
 		private Thread _challengeThread;
+		#endregion
 
+		#region Constructor
 		public MainWindow()
 		{
 			InitializeComponent();
+			SetupChallenges();
+		}
+		#endregion
 
-			var challenges = (typeof(ChallengeClass)).
+		#region Initialize Challenge list
+		private void SetupChallenges()
+		{
+			var challenges = (typeof (ChallengeClass)).
 				GetNestedTypes().
 				Select(MethodTest).
 				Where(t => t != null)
@@ -41,7 +50,7 @@ namespace MiscChallenges
 				}
 				else
 				{
-					contests[test.Contest] = new List<ChallengeInfo> { test };
+					contests[test.Contest] = new List<ChallengeInfo> {test};
 				}
 			}
 			foreach (var info in contests)
@@ -69,7 +78,9 @@ namespace MiscChallenges
 					(IChallenge)Activator.CreateInstance(member))).
 				FirstOrDefault();
 		}
+		#endregion
 
+		#region Challenge solving
 		private string GetChallengeData(IChallenge challenge)
 		{
 			var challengeDataString = challenge.RetrieveSampleInput();
@@ -125,25 +136,6 @@ namespace MiscChallenges
 			});
 		}
 
-		private void RunChallenges(object sender, RoutedEventArgs e)
-		{
-			// Check to see if we're located on a valid challenge...
-			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
-			if (challengeInfo == null)
-			{
-				return;
-			}
-
-			// Yes - get the challenge and the input data if any
-			var challenge = challengeInfo.Challenge;
-			var challengeData = tbxInput.Text;
-			var sw = new Stopwatch();
-
-			// Disable all the UI other than Cancel until this is done...
-			DisableUI();
-			SolveChallengeAsync(challenge, challengeData, sw);
-		}
-
 		private void ChallengeSolved(string result, bool isError, IChallenge challenge, Stopwatch sw)
 		{
 			var strResultString = challenge.RetrieveSampleOutput();
@@ -184,6 +176,27 @@ namespace MiscChallenges
 			btnRun.IsEnabled = false;
 			btnUrl.IsEnabled = false;
 		}
+		#endregion
+
+		#region Event handlers
+		private void RunChallenges(object sender, RoutedEventArgs e)
+		{
+			// Check to see if we're located on a valid challenge...
+			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
+			if (challengeInfo == null)
+			{
+				return;
+			}
+
+			// Yes - get the challenge and the input data if any
+			var challenge = challengeInfo.Challenge;
+			var challengeData = tbxInput.Text;
+			var sw = new Stopwatch();
+
+			// Disable all the UI other than Cancel until this is done...
+			DisableUI();
+			SolveChallengeAsync(challenge, challengeData, sw);
+		}
 
 		private void CancelChallenge(object sender, RoutedEventArgs e)
 		{
@@ -220,5 +233,6 @@ namespace MiscChallenges
 		{
 			// TODO: Add event handler implementation here.
 		}
+		#endregion
 	}
 }
