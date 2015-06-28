@@ -17,21 +17,10 @@
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
             <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" >
-                <TreeView x:Name="tvChallenges" VerticalContentAlignment="Stretch" SelectedItemChanged="tvChallenges_SelectedItemChanged" Background="White" Foreground="{x:Null}">
-                    <TreeView.Style>
-                        <Style TargetType="{x:Type TreeView}">
-                            <Style.Triggers>
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter Property="Foreground" Value="LightGray" />
-                                    <Setter Property="Background" Value="LightGray" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TreeView.Style>
-                </TreeView>
+                <TreeView x:Name="tvChallenges" VerticalContentAlignment="Stretch" SelectedItemChanged="tvChallenges_SelectedItemChanged" Background="White" Foreground="{x:Null}"/>
             </ScrollViewer>
             <Button x:Name="btnRun" Grid.Row="1" Click="RunChallenges"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Run</Button>
-            <Button x:Name="btnCancel" Content="Cancel" Grid.Row="2" Click="CancelChallenge"/>
+            <Button x:Name="btnCancel" IsEnabled="False" Content="Cancel" Grid.Row="2" Click="CancelChallenge"/>
             <Button x:Name="btnUrl" Content="Visit URL" Grid.Row="3" Click="VisitURL"/>
         </Grid>
         <Grid Grid.Column="2">

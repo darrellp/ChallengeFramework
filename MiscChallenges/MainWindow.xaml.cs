@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,7 +19,7 @@ namespace MiscChallenges
 	{
 		bool _originalInput = true;
 		private bool _changingSelection;
-		private Task<Tuple<string, bool>> _challengeTask;
+		private Thread _challengeThread;
 
 		public MainWindow()
 		{
@@ -83,11 +84,12 @@ namespace MiscChallenges
 
 		private void SolveChallengeAsync(IChallenge challenge, string challengeData, Stopwatch sw)
 		{
-			_challengeTask = Task.Factory.StartNew(delegate
+			var challengeTask = Task.Factory.StartNew(delegate
 			{
 				string strRet;
 				var isError = false;
 
+				_challengeThread = Thread.CurrentThread;
 				using (var str = challengeData == null ? null : new StringReader(challengeData))
 				{
 					try
@@ -106,7 +108,22 @@ namespace MiscChallenges
 				}
 				return new Tuple<string, bool>(strRet, isError);
 			});
-			_challengeTask.ContinueWith(_ => Dispatcher.Invoke(() => ChallengeSolved(_challengeTask.Result.Item1, _challengeTask.Result.Item2, challenge, sw)));
+			challengeTask.ContinueWith(_ =>
+			{
+				Dispatcher.Invoke(
+					delegate
+					{
+						try
+						{
+							ChallengeSolved(challengeTask.Result.Item1, challengeTask.Result.Item2, challenge, sw);
+						}
+						catch (AggregateException)
+						{
+							sw.Stop();
+							ChallengeSolved("Challenge Terminated", true, challenge, sw);
+						}
+					});
+			});
 		}
 
 		private void RunChallenges(object sender, RoutedEventArgs e)
@@ -154,14 +171,16 @@ namespace MiscChallenges
 
 		private void EnableUI()
 		{
+			btnCancel.IsEnabled = false;
 			tvChallenges.IsEnabled = true;
 			btnRun.IsEnabled = true;
 			btnUrl.IsEnabled = true;
-			_challengeTask = null;
+			_challengeThread = null;
 		}
 
 		private void DisableUI()
 		{
+			btnCancel.IsEnabled = true;
 			tvChallenges.IsEnabled = false;
 			btnRun.IsEnabled = false;
 			btnUrl.IsEnabled = false;
@@ -169,7 +188,11 @@ namespace MiscChallenges
 
 		private void CancelChallenge(object sender, RoutedEventArgs e)
 		{
-			// TODO: Add event handler implementation here.
+			if (_challengeThread != null)
+			{
+				_challengeThread.Abort();
+				EnableUI();
+			}
 		}
 
 		private void tbxInput_TextChanged(object sender, TextChangedEventArgs e)
