@@ -95,7 +95,6 @@ namespace MiscChallenges
 					try
 					{
 						sw.Start();
-						// ReSharper disable once AccessToDisposedClosure
 						strRet = challenge.Solve(str);
 						sw.Stop();
 					}
