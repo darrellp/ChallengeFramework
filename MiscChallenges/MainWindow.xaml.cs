@@ -17,7 +17,8 @@ namespace MiscChallenges
 	public partial class MainWindow
 	{
 		bool _originalInput = true;
-		private bool _changingSelection = false;
+		private bool _changingSelection;
+		private Task<Tuple<string, bool>> _challengeTask;
 
 		public MainWindow()
 		{
@@ -80,61 +81,98 @@ namespace MiscChallenges
 			return challengeData;
 		}
 
-		private void RunChallenges(object sender, RoutedEventArgs e)
+		private void SolveChallengeAsync(IChallenge challenge, string challengeData, Stopwatch sw)
 		{
-			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
-			if (challengeInfo == null)
+			_challengeTask = Task.Factory.StartNew(delegate
 			{
-				return;
-			}
-			var challenge = challengeInfo.Challenge;
-			var challengeData = tbxInput.Text;
-			var error = false;
+				string strRet;
+				var isError = false;
 
-			string strResult = string.Empty;
-			var sw = new Stopwatch();
-			using (var str = challengeData == null ? null : new StringReader(challengeData))
-			{
-				Task<string> task = new Task<string>(() =>
+				using (var str = challengeData == null ? null : new StringReader(challengeData))
 				{
 					try
 					{
 						sw.Start();
-						strResult = challenge.Solve(str);
+						// ReSharper disable once AccessToDisposedClosure
+						strRet = challenge.Solve(str);
 						sw.Stop();
 					}
 					catch (Exception ex)
 					{
 						sw.Stop();
-						error = true;
-						strResult = "Error: " + ex.Message + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
+						isError = true;
+						strRet = "Error: " + ex.Message;
 					}
-					return strResult;
-				});
-			}
+				}
+				return new Tuple<string, bool>(strRet, isError);
+			});
+			_challengeTask.ContinueWith(_ => Dispatcher.Invoke(() => ChallengeSolved(_challengeTask.Result.Item1, _challengeTask.Result.Item2, challenge, sw)));
+		}
 
-			if (error)
+		private void RunChallenges(object sender, RoutedEventArgs e)
+		{
+			// Check to see if we're located on a valid challenge...
+			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
+			if (challengeInfo == null)
 			{
-				svOutput.ScrollToTop();
-				tbOutput.Foreground = new SolidColorBrush(Colors.Red);
-				tbOutput.Text = strResult;
 				return;
 			}
+
+			// Yes - get the challenge and the input data if any
+			var challenge = challengeInfo.Challenge;
+			var challengeData = tbxInput.Text;
+			var sw = new Stopwatch();
+
+			// Disable all the UI other than Cancel until this is done...
+			DisableUI();
+			SolveChallengeAsync(challenge, challengeData, sw);
+		}
+
+		private void ChallengeSolved(string result, bool isError, IChallenge challenge, Stopwatch sw)
+		{
 			var strResultString = challenge.RetrieveSampleOutput();
 			var isResult = strResultString != null && _originalInput;
 
-			var success = isResult && strResult == strResultString.Substring(Environment.NewLine.Count());
+			var isSuccess = isResult && result == strResultString.Substring(Environment.NewLine.Count());
+			var colorOutput = Colors.Black;
 			svOutput.ScrollToTop();
-			tbOutput.Foreground = new SolidColorBrush(isResult ? (success ? Colors.Green : Colors.Red) : Colors.Black);
-			tbOutput.Text = strResult + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
+
+			// If there was an error or if there was a result we were supposed to meet and we didn't meet it
+			if (isError || (isResult && !isSuccess))
+			{
+				colorOutput = Colors.Red;
+			}
+			// If there was a result we were supposed to meet and we nailed it
+			else if (isResult)
+			{
+				colorOutput = Colors.Green;
+			}
+			tbOutput.Foreground = new SolidColorBrush(colorOutput);
+			tbOutput.Text = result + Environment.NewLine + sw.ElapsedMilliseconds + " ms.";
+			EnableUI();
 		}
 
-		private void CancelChallenge(object sender, System.Windows.RoutedEventArgs e)
+		private void EnableUI()
+		{
+			tvChallenges.IsEnabled = true;
+			btnRun.IsEnabled = true;
+			btnUrl.IsEnabled = true;
+			_challengeTask = null;
+		}
+
+		private void DisableUI()
+		{
+			tvChallenges.IsEnabled = false;
+			btnRun.IsEnabled = false;
+			btnUrl.IsEnabled = false;
+		}
+
+		private void CancelChallenge(object sender, RoutedEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 		}
 
-		private void tbxInput_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+		private void tbxInput_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			if (!_changingSelection)
 			{
@@ -156,7 +194,7 @@ namespace MiscChallenges
 			_changingSelection = false;
 		}
 
-		private void VisitURL(object sender, System.Windows.RoutedEventArgs e)
+		private void VisitURL(object sender, RoutedEventArgs e)
 		{
 			// TODO: Add event handler implementation here.
 		}
