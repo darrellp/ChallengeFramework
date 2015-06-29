@@ -7,7 +7,7 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("HackerEarth", "The Magical Shop")]
+		[Challenge("HackerEarth", "The Magical Shop", "https://www.hackerearth.com/problem/algorithm/the-magical-shop/")]
 		public class MagicalShop : IChallenge
 		{
 			static void MainTest(string[] args)

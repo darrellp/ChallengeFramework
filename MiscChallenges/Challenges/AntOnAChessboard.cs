@@ -6,7 +6,8 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("ProgChallenges", "Ant On a Chessboard")]
+		[Challenge("ProgChallenges", "Ant On a Chessboard",
+			"http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=111201&format=html")]
 		public class AntOnAChessboard : IChallenge
 		{
 			public string Solve(StringReader stm)

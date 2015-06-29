@@ -7,12 +7,14 @@ namespace MiscChallenges
 		internal string Name { get; private set; }
 		internal string Contest { get; private set; }
 		internal IChallenge Challenge { get; private set; }
+		internal Uri Uri { get; private set; }
 
-		internal ChallengeInfo(string name, string contest, IChallenge challenge)
+		internal ChallengeInfo(string name, string contest, IChallenge challenge, Uri uri = null)
 		{
 			Name = name;
 			Contest = contest;
 			Challenge = challenge;
+			Uri = uri;
 		}
 
 		public int CompareTo(object obj)

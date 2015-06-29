@@ -8,7 +8,7 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("Hacker Rank", "nCr Table")]
+		[Challenge("Hacker Rank", "nCr Table", "https://www.hackerrank.com/challenges/ncr-table")]
 		// ReSharper disable once InconsistentNaming
 		public class nCrTable : IChallenge
 		{

@@ -75,7 +75,8 @@ namespace MiscChallenges
 				Select(t => new ChallengeInfo(
 					t.Name,
 					t.Contest,
-					(IChallenge)Activator.CreateInstance(member))).
+					(IChallenge)Activator.CreateInstance(member),
+					t.URI)).
 				FirstOrDefault();
 		}
 		#endregion
@@ -165,7 +166,7 @@ namespace MiscChallenges
 			btnCancel.IsEnabled = false;
 			tvChallenges.IsEnabled = true;
 			btnRun.IsEnabled = true;
-			btnUrl.IsEnabled = true;
+			btnUri.IsEnabled = true;
 			_challengeThread = null;
 		}
 
@@ -174,7 +175,7 @@ namespace MiscChallenges
 			btnCancel.IsEnabled = true;
 			tvChallenges.IsEnabled = false;
 			btnRun.IsEnabled = false;
-			btnUrl.IsEnabled = false;
+			btnUri.IsEnabled = false;
 		}
 		#endregion
 
@@ -226,12 +227,18 @@ namespace MiscChallenges
 			}
 			var challengeData = GetChallengeData(challengeInfo.Challenge);
 			tbxInput.Text = challengeData;
+			btnUri.IsEnabled = challengeInfo.Uri != null;
 			_changingSelection = false;
 		}
 
-		private void VisitURL(object sender, RoutedEventArgs e)
+		private void VisitURI(object sender, RoutedEventArgs e)
 		{
-			// TODO: Add event handler implementation here.
+			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
+			if (challengeInfo == null || challengeInfo.Uri == null)
+			{
+				return;
+			}
+			Process.Start(challengeInfo.Uri.ToString());
 		}
 		#endregion
 	}

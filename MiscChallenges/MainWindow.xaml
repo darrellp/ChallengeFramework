@@ -21,7 +21,7 @@
             </ScrollViewer>
             <Button x:Name="btnRun" Grid.Row="1" Click="RunChallenges"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Run</Button>
             <Button x:Name="btnCancel" IsEnabled="False" Content="Cancel" Grid.Row="2" Click="CancelChallenge"/>
-            <Button x:Name="btnUrl" Content="Visit URL" Grid.Row="3" Click="VisitURL"/>
+            <Button x:Name="btnUri" IsEnabled="False" Content="Web Page" Grid.Row="3" Click="VisitURI"/>
         </Grid>
         <Grid Grid.Column="2">
         	<Grid.RowDefinitions>

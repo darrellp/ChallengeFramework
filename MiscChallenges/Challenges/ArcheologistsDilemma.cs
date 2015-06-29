@@ -6,7 +6,8 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("ProgChallenges", "Archeologist's Dilemma")]
+		[Challenge("ProgChallenges", "Archeologist's Dilemma",
+			"http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=110503&format=html")]
 		public class ArcheologistsDilemma : IChallenge
 		{
 			private readonly double _nlog10 = Math.Log(10);
