@@ -4,9 +4,9 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid x:Name="GrdTop">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="174"/>
             <ColumnDefinition Width="6"/>
-            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
         <Grid Grid.Column="0">
@@ -24,22 +24,22 @@
             <Button x:Name="btnUri" IsEnabled="False" Content="Web Page" Grid.Row="3" Click="VisitURI"/>
         </Grid>
         <Grid Grid.Column="2">
-        	<Grid.RowDefinitions>
-        		<RowDefinition Height="153*"/>
-        		<RowDefinition Height="6"/>
-        		<RowDefinition Height="53*"/>
-        	</Grid.RowDefinitions>
-			<Border BorderBrush="Black" BorderThickness="1,0,0,1">
-        		<ScrollViewer x:Name="svOutput" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
-        			<TextBlock x:Name="tbOutput" FontFamily="Courier New" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Background="#FFFFF8CF"/>
-        		</ScrollViewer>
-        	</Border>
-			<GridSplitter Grid.Row="1" HorizontalAlignment="Stretch"/>
-			<Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,1,0,0" >
-				<ScrollViewer x:Name="svInput" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
-					<TextBox x:Name="tbxInput" TextWrapping="Wrap" BorderThickness="0" BorderBrush="{x:Null}" Background="#FFFFF8CF" TextChanged="tbxInput_TextChanged"/>
-				</ScrollViewer>
-			</Border>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="153*"/>
+                <RowDefinition Height="6"/>
+                <RowDefinition Height="53*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1,0,0,1">
+                <ScrollViewer x:Name="svOutput" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
+                    <TextBlock x:Name="tbOutput" FontFamily="Courier New" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" Background="#FFFFF8CF"/>
+                </ScrollViewer>
+            </Border>
+            <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch"/>
+            <Border Grid.Row="2" BorderBrush="Black" BorderThickness="1,1,0,0" >
+                <ScrollViewer x:Name="svInput" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
+                    <TextBox x:Name="tbxInput" AcceptsReturn="True"  TextWrapping="Wrap" BorderThickness="0" BorderBrush="{x:Null}" Background="#FFFFF8CF" TextChanged="tbxInput_TextChanged"/>
+                </ScrollViewer>
+            </Border>
         </Grid>
     </Grid>
 </Window>
