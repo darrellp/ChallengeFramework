@@ -14,9 +14,11 @@ namespace MiscChallenges.Challenges
 		// ReSharper disable once InconsistentNaming
 		public class SmallChange : IChallenge
 		{
+
 			// ReSharper disable once UnusedParameter.Local
-			private static void MainTest(string[] args)
+			public string Solve(StringReader stm)
 			{
+				StringBuilder ret = new StringBuilder();
 				DenominationSet denLow = null;
 				var smallTot = int.MaxValue;
 				int sumExceededAt;
@@ -41,7 +43,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
+				ret.Append(string.Format("The smallest avg is {0} achieved by {1}{2}", smallTot/99.0, denLow, Environment.NewLine));
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -68,7 +70,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
+				ret.Append(string.Format("The smallest avg is {0} achieved by {1}{2}", smallTot/99.0, denLow, Environment.NewLine));
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -98,7 +100,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
+				ret.Append(string.Format("The smallest avg is {0} achieved by {1}{2}", smallTot/99.0, denLow, Environment.NewLine));
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -131,7 +133,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
+				ret.Append(string.Format("The smallest avg is {0} achieved by {1}{2}", smallTot/99.0, denLow, Environment.NewLine));
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -168,23 +170,8 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
-			}
-
-			public string Solve(StringReader stm)
-			{
-				Console.SetIn(stm);
-				var stream = new MemoryStream();
-				var output = new StreamWriter(stream, Encoding.UTF8);
-
-				Console.SetOut(output);
-				MainTest(null);
-				output.Flush();
-				stream.Position = 0;
-				using (var streamReader = new StreamReader(stream))
-				{
-					return streamReader.ReadToEnd();
-				}
+				ret.Append(string.Format("The smallest avg is {0} achieved by {1}{2}", smallTot/99.0, denLow, Environment.NewLine));
+				return ret.ToString();
 			}
 
 			public string RetrieveSampleInput() { return null; }

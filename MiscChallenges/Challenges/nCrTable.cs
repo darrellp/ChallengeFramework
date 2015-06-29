@@ -80,18 +80,7 @@ namespace MiscChallenges.Challenges
 
 			public string Solve(StringReader stm)
 			{
-				Console.SetIn(stm);
-				var stream = new MemoryStream();
-				var output = new StreamWriter(stream, Encoding.UTF8);
-
-				Console.SetOut(output);
-				MainTest(null);
-				output.Flush();
-				stream.Position = 0;
-				using (var streamReader = new StreamReader(stream))
-				{
-					return streamReader.ReadToEnd();
-				}
+				return SolveInOut(stm, MainTest);
 			}
 
 			public string RetrieveSampleInput()

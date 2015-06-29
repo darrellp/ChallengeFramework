@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 // ReSharper disable AssignNullToNotNullAttribute
 using System.Collections.Generic;
 using System.Linq;
@@ -80,6 +81,25 @@ namespace MiscChallenges.Challenges
 					yield return i;
 				}
 				i++;
+			}
+		}
+
+		public static string SolveInOut(StringReader stm, Action<string[]> main)
+		{
+			Console.SetIn(stm);
+			using (var stream = new MemoryStream())
+			{
+				using (var output = new StreamWriter(stream, Encoding.UTF8))
+				{
+					Console.SetOut(output);
+					main(null);
+					output.Flush();
+					stream.Position = 0;
+					using (var streamReader = new StreamReader(stream))
+					{
+						return streamReader.ReadToEnd();
+					}
+				}
 			}
 		}
 	}
