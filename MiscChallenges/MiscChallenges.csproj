@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Challenges\ChefAndStones.cs" />
     <Compile Include="Challenges\euler172.cs" />
     <Compile Include="Challenges\nCrTable.cs" />
     <Compile Include="Challenges\The Magical Shop.cs" />
