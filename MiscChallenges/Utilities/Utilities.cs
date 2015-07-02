@@ -9,6 +9,11 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
+		public static void WriteLine(this StringBuilder sb, string format, params object[] vals)
+		{
+			sb.Append(string.Format(format, vals) + Environment.NewLine);
+		}
+
 		public static ulong Fact(int n)
 		{
 			var ret = 1UL;
