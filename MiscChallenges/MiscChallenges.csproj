@@ -59,6 +59,7 @@
     <Compile Include="Challenges\InvertBinaryTree.cs" />
     <Compile Include="Challenges\MergeList.cs" />
     <Compile Include="Challenges\nCrTable.cs" />
+    <Compile Include="Challenges\palindromes.cs" />
     <Compile Include="Challenges\SmallChangeForMujikhistan.cs" />
     <Compile Include="Challenges\The Magical Shop.cs" />
     <Compile Include="Challenges\XoringNinja.cs" />
