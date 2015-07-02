@@ -55,6 +55,7 @@
     </ApplicationDefinition>
     <Compile Include="Challenges\ChefAndStones.cs" />
     <Compile Include="Challenges\euler172.cs" />
+    <Compile Include="Challenges\Ferry Loading III.cs" />
     <Compile Include="Challenges\InvertBinaryTree.cs" />
     <Compile Include="Challenges\MergeList.cs" />
     <Compile Include="Challenges\nCrTable.cs" />
