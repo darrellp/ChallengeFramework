@@ -12,7 +12,10 @@ namespace MiscChallenges.Challenges
 		/// The ferry only leaves in response to having just landed or in response to a car's arrival so ferry departures are
 		/// subsumed under other events.  The car arrival events are placed into a queue and pulled off the end.  Before pulling
 		/// a car event off the queue though, we peek and compare it with the next ferry event.  If the latter occurs first, then
-		/// we use it as the next event rather than the car event.
+		/// we use it as the next event rather than the car event.  Could have handled this with all the events in
+		/// a single priority queue but since only the ferry arrival has to be checked against the car arrivals that would be a
+		/// bit of overkill.  Other than that, we just determine the next event, update the simulation time and arrange for
+		/// everything to be updated correctly.
 		/// </summary>
 		[Challenge("UVA", "Ferry Loading III",
 			"https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=21&page=show_problem&problem=1842")]
@@ -86,7 +89,7 @@ namespace MiscChallenges.Challenges
 			}
 
 			public int ArrivalTime { get; private set; }
-			public bool ArriveRight { get; private set; }
+			private bool ArriveRight { get; set; }
 			public int Index { get; private set; }
 
 			public bool ArriveLeft
@@ -97,21 +100,21 @@ namespace MiscChallenges.Challenges
 
 		class FerryCase
 		{
-			private int _capacity;
-			private int _crossingTime;
-			private int _cCars;
-			private Queue<Car> _incomingCars;
-			private int _simulationTime = 0;
+			private readonly int _capacity;
+			private readonly int _crossingTime;
+			private readonly int _cCars;
+			private readonly Queue<Car> _incomingCars;
+			private int _simulationTime;
 			private int _ferryArrival;
 
-			List<Car> _carsLoaded = new List<Car>();
+			readonly List<Car> _carsLoaded = new List<Car>();
 			// Cars waiting at the right and left bank
-			Queue<Car> _carsRight = new Queue<Car>();
-			Queue<Car> _carsLeft = new Queue<Car>();
+			readonly Queue<Car> _carsRight = new Queue<Car>();
+			readonly Queue<Car> _carsLeft = new Queue<Car>();
 			bool _ferryOnLeft = true;
 
 			// Our final result - time each car waited
-			int[] _unloadTimes;
+			readonly int[] _unloadTimes;
 			bool _fCarsInTransit = true;
 
 			public FerryCase(StringReader stm)
@@ -125,6 +128,7 @@ namespace MiscChallenges.Challenges
 
 				for (var iCar = 0; iCar < _cCars; iCar++)
 				{
+					// ReSharper disable once PossibleNullReferenceException
 					var carVals = stm.ReadLine().Split(' ');
 					var arrival = int.Parse(carVals[0]);
 					var arriveRight = carVals[1] == "right";
