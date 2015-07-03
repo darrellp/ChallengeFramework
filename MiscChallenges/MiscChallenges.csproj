@@ -53,16 +53,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Challenges\ChefAndStones.cs" />
-    <Compile Include="Challenges\euler172.cs" />
-    <Compile Include="Challenges\Ferry Loading III.cs" />
-    <Compile Include="Challenges\InvertBinaryTree.cs" />
-    <Compile Include="Challenges\MergeList.cs" />
-    <Compile Include="Challenges\nCrTable.cs" />
-    <Compile Include="Challenges\palindromes.cs" />
-    <Compile Include="Challenges\SmallChangeForMujikhistan.cs" />
-    <Compile Include="Challenges\The Magical Shop.cs" />
-    <Compile Include="Challenges\XoringNinja.cs" />
+    <Compile Include="Challenges\Code Chef\ChefAndStones.cs" />
+    <Compile Include="Challenges\Euler Project\euler172.cs" />
+    <Compile Include="Challenges\UVA\Ferry Loading III.cs" />
+    <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
+    <Compile Include="Challenges\Hacker Rank\MergeList.cs" />
+    <Compile Include="Challenges\Hacker Rank\nCrTable.cs" />
+    <Compile Include="Challenges\UVA\palindromes.cs" />
+    <Compile Include="Challenges\Dr Ecco\SmallChangeForMujikhistan.cs" />
+    <Compile Include="Challenges\Hacker Earth\The Magical Shop.cs" />
+    <Compile Include="Challenges\Hacker Rank\XoringNinja.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -74,8 +74,8 @@
     </Compile>
     <Compile Include="ChallengeAttribute.cs" />
     <Compile Include="ChallengeInfo.cs" />
-    <Compile Include="Challenges\AntOnAChessboard.cs" />
-    <Compile Include="Challenges\ArcheologistsDilemma.cs" />
+    <Compile Include="Challenges\Programming Challenges\AntOnAChessboard.cs" />
+    <Compile Include="Challenges\Programming Challenges\ArcheologistsDilemma.cs" />
     <Compile Include="IChallenge.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
