@@ -55,6 +55,7 @@
     </ApplicationDefinition>
     <Compile Include="Challenges\Code Chef\ChefAndStones.cs" />
     <Compile Include="Challenges\Euler Project\euler172.cs" />
+    <Compile Include="Challenges\Programming Challenges\Bigger Square Please.cs" />
     <Compile Include="Challenges\UVA\Ferry Loading III.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
     <Compile Include="Challenges\Hacker Rank\MergeList.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Challenges\Dr Ecco\SmallChangeForMujikhistan.cs" />
     <Compile Include="Challenges\Hacker Earth\The Magical Shop.cs" />
     <Compile Include="Challenges\Hacker Rank\XoringNinja.cs" />
+    <Compile Include="Challenges\UVA\Subsequence.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
