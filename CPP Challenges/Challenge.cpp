@@ -48,7 +48,14 @@ char *Challenge::RunSolver(int index, char *input)
 	std::cin.rdbuf(psbuf);
 
 	solverT solver = challenges[index]->GetSolver();
-	solver();
+	try
+	{
+		solver();
+	}
+	catch (...)
+	{
+		return "<<<EXCEPTION>>>";
+	}
 
 	// Restore cin, cout
 	std::cin.rdbuf(backupInput);

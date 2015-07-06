@@ -28,7 +28,7 @@ int main()
 		if (difference != 0)
 		{
 			int sumOfSteps = 0;
-			int z = 2; //divided by 2, it represents the size if the next step
+			int z = 2;
 			while (difference > sumOfSteps)
 			{
 				sumOfSteps += (z / 2); //next step
