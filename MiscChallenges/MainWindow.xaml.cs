@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,6 +18,12 @@ namespace MiscChallenges
 	/// </summary>
 	public partial class MainWindow
 	{
+		#region DllImports
+		[DllImport("CPP Challenges.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Auto)]
+		[return: MarshalAs(UnmanagedType.LPStr)]
+		public static extern string GatherChallengeInfo();
+		#endregion
+
 		#region Private Variables
 		private bool _originalInput = true;
 		private bool _changingSelection;
@@ -41,6 +48,8 @@ namespace MiscChallenges
 				.ToList();
 
 			var contests = new Dictionary<string, List<ChallengeInfo>>();
+
+			var val = GatherChallengeInfo();
 
 			foreach (var test in challenges)
 			{
