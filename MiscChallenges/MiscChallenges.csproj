@@ -67,6 +67,7 @@
     <Compile Include="Challenges\Hacker Earth\The Magical Shop.cs" />
     <Compile Include="Challenges\Hacker Rank\XoringNinja.cs" />
     <Compile Include="Challenges\UVA\Subsequence.cs" />
+    <Compile Include="CppChallenge.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

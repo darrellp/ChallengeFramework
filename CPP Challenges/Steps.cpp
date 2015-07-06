@@ -1,9 +1,11 @@
-#ifndef CHALLENGE_RUNNER
-#define prolog(a,b,c,d)
-#define epilog
-#else
+#ifdef CHALLENGE_RUNNER
 #include "stdafx.h"
 #include "Challenge.h"
+#else
+#define prolog(a,b,c,d)
+#define epilog
+#define sampleInput char *_dummy1_ =
+#define sampleOutput char *_dummy2_ =
 #endif
 
 #include<iostream>
@@ -39,11 +41,18 @@ int main()
 	}
 	return 0;
 }
-//input
-//3
-//45 48
-//45 49
-//45 50
-//output
-//3
+
+sampleInput
+R"(
+3
+45 48
+45 49
+45 50
+)";
+sampleOutput
+R"(
+3
+3
+4
+)";
 epilog

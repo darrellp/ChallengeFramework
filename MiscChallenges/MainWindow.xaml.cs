@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -47,9 +48,9 @@ namespace MiscChallenges
 				Where(t => t != null)
 				.ToList();
 
-			var contests = new Dictionary<string, List<ChallengeInfo>>();
+			challenges.AddRange(ParseCppChallengeInfo(GatherChallengeInfo()));
 
-			var val = GatherChallengeInfo();
+			var contests = new Dictionary<string, List<ChallengeInfo>>();
 
 			foreach (var test in challenges)
 			{
@@ -74,6 +75,40 @@ namespace MiscChallenges
 				};
 				tvChallenges.Items.Add(item);
 			}
+		}
+
+		private static IEnumerable<ChallengeInfo> ParseCppChallengeInfo(string infoString)
+		{
+			var ret = new List<ChallengeInfo>();
+			var readPointer = 0;
+			int index = 0;
+
+			while (readPointer < infoString.Length)
+			{
+				ret.Add(ParseOneCppChallenge(infoString, index++, ref readPointer));
+			}
+			return ret;
+		}
+
+		private static ChallengeInfo ParseOneCppChallenge(string infoString, int challengeIndex, ref int readPointer)
+		{
+			var index = infoString.IndexOf('$', readPointer);
+			var contest = infoString.Substring(readPointer, index - readPointer);
+			readPointer = index + 1;
+			index = infoString.IndexOf('<', readPointer);
+			var name = infoString.Substring(readPointer, index - readPointer);
+			readPointer = index + 1;
+			index = infoString.IndexOf('>', readPointer);
+			var uri = infoString.Substring(readPointer, index - readPointer);
+			readPointer = index + 1;
+			index = infoString.IndexOf('$', readPointer);
+			var input = ChallengeClass.CppStringToCs(infoString.Substring(readPointer, index - readPointer));
+			readPointer = index + 1;
+			index = infoString.IndexOf('$', readPointer);
+			var output = ChallengeClass.CppStringToCs(infoString.Substring(readPointer, index - readPointer));
+			readPointer = index + 1;
+			IChallenge newChallenge = new CppChallenge(challengeIndex, input, output);
+			return new ChallengeInfo(name, contest, newChallenge, new Uri(uri));
 		}
 
 		private static ChallengeInfo MethodTest(Type member)

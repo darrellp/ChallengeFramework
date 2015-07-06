@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 // ReSharper disable AssignNullToNotNullAttribute
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,16 @@ namespace MiscChallenges.Challenges
 		public static void WriteLine(this StringBuilder sb, string format, params object[] vals)
 		{
 			sb.Append(string.Format(format, vals) + Environment.NewLine);
+		}
+
+		public static string CppStringToCs(string cppString)
+		{
+			return Regex.Replace(cppString, "\n", Environment.NewLine);
+		}
+
+		public static string CsStringToCpp(string cppString)
+		{
+			return Regex.Replace(cppString, Environment.NewLine, "\n");
 		}
 
 		public static ulong Fact(int n)
