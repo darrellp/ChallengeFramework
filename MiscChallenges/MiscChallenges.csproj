@@ -57,6 +57,7 @@
     <Compile Include="Challenges\Euler Project\euler172.cs" />
     <Compile Include="Challenges\Euler Project\euler173.cs" />
     <Compile Include="Challenges\Programming Challenges\Bigger Square Please.cs" />
+    <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
     <Compile Include="Challenges\UVA\Ferry Loading III.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
