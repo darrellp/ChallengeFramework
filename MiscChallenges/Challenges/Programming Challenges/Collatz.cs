@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,9 @@ namespace MiscChallenges.Challenges
 						break;
 					}
 
-					var c = Enumerable.Range(nextCase.Item1, nextCase.Item2 - nextCase.Item1 + 1).
+					var low = Math.Min(nextCase.Item1, nextCase.Item2);
+					var high = Math.Max(nextCase.Item1, nextCase.Item2);
+					var c = Enumerable.Range(low, high - low + 1).
 						Select(CollatzCount).
 						Max();
 					ret.Append(string.Format("{0} {1} {2}" + Environment.NewLine, nextCase.Item1, nextCase.Item2, c));
@@ -32,7 +35,7 @@ namespace MiscChallenges.Challenges
 
 			private int CollatzCount(int i)
 			{
-				var v = (long)i;
+				long v = i;
 				var count = 1;
 
 				while (v != 1)
@@ -45,6 +48,10 @@ namespace MiscChallenges.Challenges
 					else
 					{
 						v = 3 * v + 1;
+						if (v < 0)
+						{
+							Debugger.Break();
+						}
 					}
 				}
 				return count;
@@ -70,6 +77,11 @@ namespace MiscChallenges.Challenges
 100 200
 201 210
 900 1000
+1 1
+10 1
+210 201
+113383 113383
+999999 1
 ";
 			}
 
@@ -80,6 +92,11 @@ namespace MiscChallenges.Challenges
 100 200 125
 201 210 89
 900 1000 174
+1 1 1
+10 1 20
+210 201 89
+113383 113383 248
+999999 1 525
 ";
 			}
 		}

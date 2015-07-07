@@ -1,10 +1,9 @@
 #include <vector>
 
-#define prolog(c, nv, n, u) namespace nv {char *_v1_ = c, *_v2_ = n, *_v3_ = u; extern "C" {
-#define sampleInput } char *input = 
+#define prolog(c, nv, n, u) namespace nv {char *_v1_ = c, *_v2_ = n, *_v3_ = u;
+#define sampleInput char *input = 
 #define sampleOutput char *output = 
 #define epilog auto d = new Challenge(_v1_,_v2_,_v3_,input,output,&main);}
-#define main() __declspec(dllexport) main()
 typedef int (*solverT)();
 
 class Challenge
