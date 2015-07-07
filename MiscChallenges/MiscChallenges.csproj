@@ -34,6 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NumberTheoryBig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referenced Assemblies\NumberTheoryBig.dll</HintPath>
+    </Reference>
+    <Reference Include="NumberTheoryLong, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referenced Assemblies\NumberTheoryLong.dll</HintPath>
+    </Reference>
+    <Reference Include="Priority Queue, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referenced Assemblies\Priority Queue.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -59,6 +71,7 @@
     <Compile Include="Challenges\Programming Challenges\Bigger Square Please.cs" />
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
+    <Compile Include="Challenges\UVA\Black Box.cs" />
     <Compile Include="Challenges\UVA\Ferry Loading III.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
     <Compile Include="Challenges\Hacker Rank\MergeList.cs" />
@@ -114,6 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Referenced Assemblies\NumberTheoryBig.dll" />
+    <Content Include="Referenced Assemblies\NumberTheoryLong.dll" />
+    <Content Include="Referenced Assemblies\Priority Queue.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
