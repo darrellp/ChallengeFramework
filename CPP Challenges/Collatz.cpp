@@ -23,11 +23,13 @@ int CollatzCount(int a)
 		count++;
 		if ((v & 1) == 0)
 		{
-			v = v / 2;
+			// Substantial difference in performance here - using v / 2
+			// causes timing to go from 0.8 seconds to 1.8 seconds.
+			v = v >> 1;
 		}
 		else
 		{
-			v = 3 * v + 1;
+			v = (v << 1) + v + 1;
 		}
 	}
 	return count;

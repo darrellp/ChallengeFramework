@@ -42,11 +42,11 @@ namespace MiscChallenges.Challenges
 					count++;
 					if ((v & 1) == 0)
 					{
-						v = v / 2;
+						v = v >> 1;
 					}
 					else
 					{
-						v = 3 * v + 1;
+						v = (v << 1) + v + 1;
 					}
 				}
 				return count;
