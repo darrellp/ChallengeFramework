@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -48,10 +47,6 @@ namespace MiscChallenges.Challenges
 					else
 					{
 						v = 3 * v + 1;
-						if (v < 0)
-						{
-							Debugger.Break();
-						}
 					}
 				}
 				return count;
