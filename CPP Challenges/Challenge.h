@@ -23,7 +23,6 @@ public:
 	solverT GetSolver();
 
 private:
-	static std::vector<Challenge *> challenges;
 	char *_contest;
 	char *_name;
 	char *_uri;
