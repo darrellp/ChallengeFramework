@@ -6,7 +6,11 @@
 #include <cstdio>
 #include <iostream>
 
-std::vector<Challenge *> Challenge::challenges;
+std::vector<Challenge *>& challenges()
+{
+	static std::vector<Challenge *>* ans = new std::vector<Challenge *>();
+	return *ans;
+}
 
 Challenge::Challenge(char *contest, char *name, char *uri, char *input, char *output, solverT solver)
 {
@@ -16,11 +20,8 @@ Challenge::Challenge(char *contest, char *name, char *uri, char *input, char *ou
 	_input = input;
 	_output = output;
 	_solver = solver;
-	challenges.push_back(this);
+	challenges().push_back(this);
 }
-
-Challenge::~Challenge()
-{}
 
 char* StringReturn(const char *in)
 {
@@ -47,7 +48,7 @@ char *Challenge::RunSolver(int index, char *input)
 	std::streambuf *psbuf = stmInput.rdbuf();
 	std::cin.rdbuf(psbuf);
 
-	solverT solver = challenges[index]->GetSolver();
+	solverT solver = challenges()[index]->GetSolver();
 	try
 	{
 		solver();
@@ -68,7 +69,7 @@ char *Challenge::GatherChallengeInfo()
 {
 	std::ostringstream stm;
 
-	for (auto pChallenge = challenges.begin(); pChallenge != challenges.end(); ++pChallenge)
+	for (auto pChallenge = challenges().begin(); pChallenge != challenges().end(); ++pChallenge)
 	{
 		if (strchr((*pChallenge)->GetContest(), '$') ||
 			strchr((*pChallenge)->GetName(), '<') ||
