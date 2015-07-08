@@ -31,31 +31,29 @@ public:
 		return _smallest.size() + _largest.size();
 	}
 
-	void SetN(int n)
+	void SetN(unsigned int n)
 	{
-		if (n == _n)
+		if (n == _smallest.size())
 		{
 			return;
 		}
 
-		auto oldN = _n;
 		_n = n;
-		if (oldN < _n)
+
+		if (_smallest.size() < n)
 		{
-			while (oldN < _n && _largest.size() > 0)
+			while (_smallest.size() < n && _largest.size() > 0)
 			{
 				_smallest.push(_largest.top());
 				_largest.pop();
-				oldN++;
 			}
 		}
 		else
 		{
-			while (oldN > _n)
+			while (_smallest.size() > n)
 			{
 				_largest.push(_smallest.top());
-				_largest.pop();
-				oldN--;
+				_smallest.pop();
 			}
 		}
 	}
@@ -67,7 +65,7 @@ public:
 			_smallest.push(val);
 			return;
 		}
-		if (_n != 0 && val <_smallest.top())
+		if (_n != 0 && val < _smallest.top())
 		{
 			_smallest.push(val);
 			val = _smallest.top();
@@ -102,6 +100,12 @@ int main()
 		int cAdds, cGets;
 		int iAdd = 0;
 
+		if (!fFirstCase)
+		{
+			cout << endl;
+		}
+		fFirstCase = false;
+
 		cin >> cAdds >> cGets;
 		int *adds = new int[cAdds];
 
@@ -122,12 +126,6 @@ int main()
 			cout << pq.Peek() << endl;
 			pq.SetN(iGet + 1);
 		}
-		if (!fFirstCase)
-		{
-			cout << endl;
-		}
-		fFirstCase = false;
-
 		delete adds;
 	}
 
