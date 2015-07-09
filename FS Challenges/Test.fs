@@ -1,15 +1,38 @@
 ﻿module Test
-open FS_Challenges
-open System.IO
 open System
+let main =
+    let mutable chk=true
+    while chk do
+        let x = int(Console.ReadLine())
+        match x with
+            | 42 -> chk<-false
+            | _ -> printfn "%d" x
+main
 
-[<Challenge("Code Chef", "Test", "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=7&page=show_problem&problem=442")>]
+#if CHALLENGE_RUNNER
+open System.IO
+open FS_Challenges
+
+[<Challenge("Code Chef", "Test", "http://www.codechef.com/problems/TEST")>]
 type TestChallenge() = 
     interface IChallenge with
-        member this.Solve(stm:System.IO.StringReader) = "F#" + Environment.NewLine
+        member this.Solve(stm:System.IO.StringReader) = 
+            Console.SetIn stm
+            let sw = new StringWriter()
+            Console.SetOut sw
+            main
+            sw.ToString();
         member this.RetrieveSampleInput() = @"
-input
+1
+2
+88
+42
+99
 "
         member this.RetrieveSampleOutput() = @"
-F#
+1
+2
+88
 "
+#endif
+
