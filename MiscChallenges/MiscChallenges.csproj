@@ -80,6 +80,10 @@
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
+    <Compile Include="Challenges\UVA\Black Box.cs" />
+    <Compile Include="Challenges\UVA\Ferry Loading III.cs" />
+    <Compile Include="Challenges\UVA\palindromes.cs" />
+    <Compile Include="Challenges\UVA\Subsequence.cs" />
     <Compile Include="CppChallenge.cs" />
     <Compile Include="FsChallenge.cs" />
     <Compile Include="Utilities\Utilities.cs" />
@@ -137,9 +141,7 @@
     <Content Include="Referenced Assemblies\NumberTheoryLong.dll" />
     <Content Include="Referenced Assemblies\Priority Queue.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Challenges\UVA\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
