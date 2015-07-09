@@ -82,6 +82,7 @@
     <Compile Include="Challenges\Hacker Rank\XoringNinja.cs" />
     <Compile Include="Challenges\UVA\Subsequence.cs" />
     <Compile Include="CppChallenge.cs" />
+    <Compile Include="FsChallenge.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -128,7 +129,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FS Challenges\FS Challenges.fsproj">
+      <Project>{5666d73e-1aa5-453f-ad4e-8de93671a875}</Project>
+      <Name>FS Challenges</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Referenced Assemblies\NumberTheoryBig.dll" />
     <Content Include="Referenced Assemblies\NumberTheoryLong.dll" />

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -49,6 +49,7 @@ namespace MiscChallenges
 				.ToList();
 
 			challenges.AddRange(ParseCppChallengeInfo(GatherChallengeInfo()));
+			challenges.AddRange(GatherFSChallengeInfo());
 
 			var contests = new Dictionary<string, List<ChallengeInfo>>();
 
@@ -77,11 +78,19 @@ namespace MiscChallenges
 			}
 		}
 
+		private IEnumerable<ChallengeInfo> GatherFSChallengeInfo()
+		{
+			return Assembly.GetAssembly(typeof(FS_Challenges)).GetTypes().
+				Select(FsMethodTest).
+				Where(t => t != null)
+				.ToList();
+		}
+
 		private static IEnumerable<ChallengeInfo> ParseCppChallengeInfo(string infoString)
 		{
 			var ret = new List<ChallengeInfo>();
 			var readPointer = 0;
-			int index = 0;
+			var index = 0;
 
 			while (readPointer < infoString.Length)
 			{
@@ -109,6 +118,19 @@ namespace MiscChallenges
 			readPointer = index + 1;
 			IChallenge newChallenge = new CppChallenge(challengeIndex, input, output);
 			return new ChallengeInfo(name, contest, newChallenge, new Uri(uri));
+		}
+
+		private static ChallengeInfo FsMethodTest(Type member)
+		{
+			return member.
+				GetCustomAttributes(true).
+				OfType<FS_Challenges.ChallengeAttribute>().
+				Select(t => new ChallengeInfo(
+					t.Name,
+					t.Contest,
+					new FsChallenge((FS_Challenges.IChallenge)Activator.CreateInstance(member)),
+					t.URI)).
+				FirstOrDefault();
 		}
 
 		private static ChallengeInfo MethodTest(Type member)

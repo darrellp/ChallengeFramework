@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscChallenges", "MiscChall
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP Challenges", "CPP Challenges\CPP Challenges.vcxproj", "{123750FA-8DFD-4FFC-97B2-E409386E019B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FS Challenges", "FS Challenges\FS Challenges.fsproj", "{5666D73E-1AA5-453F-AD4E-8DE93671A875}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,16 @@ Global
 		{123750FA-8DFD-4FFC-97B2-E409386E019B}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{123750FA-8DFD-4FFC-97B2-E409386E019B}.Release|Win32.ActiveCfg = Release|Win32
 		{123750FA-8DFD-4FFC-97B2-E409386E019B}.Release|Win32.Build.0 = Release|Win32
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
