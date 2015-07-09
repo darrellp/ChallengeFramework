@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace MiscChallenges.Challenges
 {
@@ -24,7 +22,7 @@ namespace MiscChallenges.Challenges
 						break;
 					}
 					var totalRequired = vals[1];
-					Console.WriteLine("{0}", GetSeqValue(totalRequired, GetVals()));
+					Console.WriteLine(@"{0}", GetSeqValue(totalRequired, GetVals()));
 				}
 			}
 

@@ -1,10 +1,8 @@
-﻿using System.IO;
-
-namespace MiscChallenges
+﻿namespace MiscChallenges
 {
 	class FsChallenge : IChallenge
 	{
-		private FS_Challenges.IChallenge _fsChallenge;
+		private readonly FS_Challenges.IChallenge _fsChallenge;
 		public FsChallenge(FS_Challenges.IChallenge fsChallenge)
 		{
 			_fsChallenge = fsChallenge;

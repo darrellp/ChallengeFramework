@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace MiscChallenges
+﻿namespace MiscChallenges
 {
 	public interface IChallenge
 	{

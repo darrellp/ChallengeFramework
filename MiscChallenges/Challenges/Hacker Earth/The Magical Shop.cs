@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace MiscChallenges.Challenges
 {
@@ -13,9 +11,11 @@ namespace MiscChallenges.Challenges
 			public void Solve()
 			{
 				var ab = Console.ReadLine();
+				// ReSharper disable once PossibleNullReferenceException
 				var vals = ab.Split(' ').Select(long.Parse).ToList();
 				var a = vals[0];
 				var b = vals[1];
+				// ReSharper disable once AssignNullToNotNullAttribute
 				var onString = Console.ReadLine().Select(ch => ch == '1').ToList();
 				var sum = 0L;
 

@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Text;
 using System.Text.RegularExpressions;
 // ReSharper disable AssignNullToNotNullAttribute
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
 
 namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		public static void WriteLine(this StringBuilder sb, string format, params object[] vals)
-		{
-			sb.Append(string.Format(format, vals) + Environment.NewLine);
-		}
-
 		public static string CppStringToCs(string cppString)
 		{
 			return Regex.Replace(cppString, "\n", Environment.NewLine);
@@ -64,9 +57,9 @@ namespace MiscChallenges.Challenges
 				ToList();
 		}
 
-		public static List<double> GetDblVals(StringReader str)
+		public static List<double> GetDblVals()
 		{
-			var line = str.ReadLine();
+			var line = Console.ReadLine();
 			if (line == null)
 			{
 				return null;

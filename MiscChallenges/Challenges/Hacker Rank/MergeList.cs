@@ -38,7 +38,6 @@ namespace MiscChallenges.Challenges
 					var n = Math.Min(nm[0], nm[1]);
 					var m = Math.Max(nm[0], nm[1]);
 					var multipliers = new List<long>();
-					long curVal;
 
 					for (var r = 0L; r < n; r++)
 					{
@@ -62,7 +61,7 @@ namespace MiscChallenges.Challenges
 							}
 						}
 					}
-					curVal = multipliers.Aggregate<long, long>(1, (current, mult) => current * mult % 1000000007L);
+					var curVal = multipliers.Aggregate<long, long>(1, (current, mult) => current * mult % 1000000007L);
 					Console.WriteLine(curVal);
 				}
 				// ReSharper restore AssignNullToNotNullAttribute

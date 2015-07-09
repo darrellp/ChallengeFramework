@@ -42,6 +42,7 @@ namespace MiscChallenges.Challenges
 				for (var iCase = 0; iCase < cases; iCase++)
 				{
 					var cVals = int.Parse(Console.ReadLine());
+					// ReSharper disable once PossibleNullReferenceException
 					var ret = Console.ReadLine().Split(' ').Select(int.Parse).Aggregate((a1, a2) => a1 | a2);
 					// ReSharper restore AssignNullToNotNullAttribute
 					for (var iBit = 0; iBit < cVals - 1; iBit++)
