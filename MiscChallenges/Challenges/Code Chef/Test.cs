@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 #if CHALLENGE_RUNNER
 namespace MiscChallenges.Challenges
@@ -9,15 +8,24 @@ namespace MiscChallenges.Challenges
 		[Challenge("Code Chef", "Test - CS", "http://www.codechef.com/problems/TEST")]
 		public class ChefTest : IChallenge
 		{
-			public string Solve(StringReader stm)
+			public class LocalTest
 			{
-				Console.SetIn(stm);
-				var sw = new StringWriter();
-				Console.SetOut(sw);
-				LocalTest.MainTest();
-				return sw.ToString();
+				public static void Solve()
+#else
+			public class LocalTest
+			{
+				public static void Main()
+#endif
+				{
+					var input = Console.ReadLine();
+					while (input != "42")
+					{
+						Console.WriteLine(input);
+						input = Console.ReadLine();
+					}
+				}
 			}
-
+#if CHALLENGE_RUNNER
 			public string RetrieveSampleInput()
 			{
 				return @"
@@ -37,23 +45,12 @@ namespace MiscChallenges.Challenges
 88
 ";
 			}
-			public class LocalTest
+
+			public void Solve()
 			{
-				internal static void MainTest()
-#else
-			public class LocalTest
-			{
-				public static void Main()
-#endif
-				{
-					var input = Console.ReadLine();
-					while (input != "42")
-					{
-						Console.WriteLine(input);
-						input = Console.ReadLine();
-					}
-				}
+				LocalTest.Solve();
 			}
 		}
 	}
 }
+#endif

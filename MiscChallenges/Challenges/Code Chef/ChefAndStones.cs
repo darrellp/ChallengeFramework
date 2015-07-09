@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Text;
 
 namespace MiscChallenges.Challenges
 {
@@ -10,17 +8,16 @@ namespace MiscChallenges.Challenges
 		// ReSharper disable once InconsistentNaming
 		public class ChefSton : IChallenge
 		{
-			public string Solve(StringReader stm)
+			public void Solve()
 			{
-				var ret = new StringBuilder();
-				var cTests = GetVal(stm);
-				for (int iTest = 0; iTest < cTests; iTest++)
+				var cTests = GetVal();
+				for (var iTest = 0; iTest < cTests; iTest++)
 				{
-					var vals = GetVals(stm);
+					var vals = GetVals();
 					var cTypes = vals[0];
 					var time = vals[1];
-					var typeTimes = GetVals(stm);
-					var typeProfits = GetVals(stm);
+					var typeTimes = GetVals();
+					var typeProfits = GetVals();
 					var maxProfit = int.MinValue;
 
 					for (int iType = 0; iType < cTypes; iType++)
@@ -32,9 +29,8 @@ namespace MiscChallenges.Challenges
 							maxProfit = profit;
 						}
 					}
-					ret.Append(maxProfit.ToString() + Environment.NewLine);
+					Console.WriteLine(maxProfit.ToString());
 				}
-				return ret.ToString();
 			}
 
 			public string RetrieveSampleInput()

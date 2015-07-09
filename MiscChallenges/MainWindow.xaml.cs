@@ -172,9 +172,16 @@ namespace MiscChallenges
 				{
 					try
 					{
+						if (str != null)
+						{
+							Console.SetIn(str);
+						}
+						var swrit = new StringWriter();
+						Console.SetOut(swrit);
 						sw.Start();
-						strRet = challenge.Solve(str);
+						challenge.Solve();
 						sw.Stop();
+						strRet = swrit.ToString();
 					}
 					catch (Exception ex)
 					{
@@ -185,6 +192,7 @@ namespace MiscChallenges
 				}
 				return new Tuple<string, bool>(strRet, isError);
 			});
+
 			challengeTask.ContinueWith(_ =>
 			{
 				Dispatcher.Invoke(

@@ -10,9 +10,9 @@ namespace MiscChallenges
 			_fsChallenge = fsChallenge;
 		}
 
-		public string Solve(StringReader data)
+		public void Solve()
 		{
-			return _fsChallenge.Solve(data);
+			_fsChallenge.Solve();
 		}
 
 		public string RetrieveSampleInput()

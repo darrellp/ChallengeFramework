@@ -4,7 +4,7 @@ namespace MiscChallenges
 {
 	public interface IChallenge
 	{
-		string Solve(StringReader data);
+		void Solve();
 		string RetrieveSampleInput();
 		string RetrieveSampleOutput();
 	}

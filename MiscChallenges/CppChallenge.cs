@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Runtime.InteropServices;
 using MiscChallenges.Challenges;
 
@@ -27,15 +26,15 @@ namespace MiscChallenges
 			_output = output;
 		}
 
-		public string Solve(StringReader data)
+		public void Solve()
 		{
-			var input = ChallengeClass.CsStringToCpp(data.ReadToEnd());
+			var input = ChallengeClass.CsStringToCpp(Console.In.ReadToEnd());
 			var ret = ChallengeClass.CppStringToCs(RunSolver(_index, input));
 			if (ret == "<<<EXCEPTION>>>")
 			{
 				throw new InvalidOperationException("C++ program threw an exception");
 			}
-			return ret;
+			Console.Write(ret);
 		}
 
 		public string RetrieveSampleInput()

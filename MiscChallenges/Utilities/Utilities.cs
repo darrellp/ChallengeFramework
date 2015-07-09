@@ -47,14 +47,14 @@ namespace MiscChallenges.Challenges
 			return den / Fact(k);
 		}
 
-		public static int GetVal(StringReader str)
+		public static int GetVal()
 		{
-			return int.Parse(str.ReadLine());
+			return int.Parse(Console.ReadLine());
 		}
 
-		public static List<int> GetVals(StringReader str)
+		public static List<int> GetVals()
 		{
-			var line = str.ReadLine();
+			var line = Console.ReadLine();
 			if (line == null)
 			{
 				return null;

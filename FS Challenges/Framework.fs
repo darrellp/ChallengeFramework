@@ -10,6 +10,6 @@ type ChallengeAttribute(contest:string, name:string, uri:string) =
     member this.URI = new Uri(uri)
 
 type IChallenge =
-     abstract Solve : System.IO.StringReader -> string
+     abstract Solve : unit -> unit
      abstract RetrieveSampleInput : unit -> string
      abstract RetrieveSampleOutput : unit -> string
