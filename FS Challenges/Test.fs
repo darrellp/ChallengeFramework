@@ -13,7 +13,7 @@ main
 open System.IO
 open FS_Challenges
 
-[<Challenge("Code Chef", "Test", "http://www.codechef.com/problems/TEST")>]
+[<Challenge("Code Chef", "Test - FS", "http://www.codechef.com/problems/TEST")>]
 type TestChallenge() = 
     interface IChallenge with
         member this.Solve(stm:System.IO.StringReader) = 
