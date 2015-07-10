@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="Challenges\Code Chef\ChefAndStones.cs" />
     <Compile Include="Challenges\Code Chef\Test.cs" />
+    <Compile Include="Challenges\Code Chef\TestNS.cs" />
     <Compile Include="Challenges\Dr Ecco\SmallChangeForMujikhistan.cs" />
     <Compile Include="Challenges\Euler Project\euler172.cs" />
     <Compile Include="Challenges\Euler Project\euler173.cs" />

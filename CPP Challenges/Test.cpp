@@ -7,7 +7,6 @@
 #define sampleInput char *_dummy1_ =
 #define sampleOutput char *_dummy2_ =
 #endif
-
 #include<iostream>
 #include <queue>
 #include <functional>
