@@ -92,6 +92,7 @@
     <ClCompile Include="Challenge.cpp" />
     <ClCompile Include="Collatz.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Blocks.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Steps.cpp" />
     <ClCompile Include="Test.cpp" />
