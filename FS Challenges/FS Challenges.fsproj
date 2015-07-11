@@ -37,13 +37,22 @@
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="NumberTheoryBig">
+      <HintPath>..\MiscChallenges\Referenced Assemblies\NumberTheoryBig.dll</HintPath>
+    </Reference>
+    <Reference Include="NumberTheoryLong">
+      <HintPath>..\MiscChallenges\Referenced Assemblies\NumberTheoryLong.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="primelist.fs" />
+    <Compile Include="myutility.fs" />
     <Compile Include="Framework.fs" />
     <Compile Include="Test.fs" />
+    <Compile Include="Euler247.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
