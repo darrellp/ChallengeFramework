@@ -18,6 +18,8 @@ type areaNode (ptLowerLeft:(float*float), szSquare:float, cLeft:int, cBelow:int)
         and set newINode = 
             this.iNode <- newINode
     override this.ToString() = sprintf "Node %d with %d below and %d to the left" this.INode this.cBelow this.cLeft
+    override this.Equals(an:obj) = this.szSquare.Equals((an :?> areaNode).szSquare)
+    override this.GetHashCode() = this.szSquare.GetHashCode()
 
     new(anParent:areaNode, fAbove:bool) =
         let ptLowerLeft =

@@ -48,6 +48,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -71,6 +72,7 @@
     <Compile Include="Challenges\Dr Ecco\SmallChangeForMujikhistan.cs" />
     <Compile Include="Challenges\Euler Project\euler172.cs" />
     <Compile Include="Challenges\Euler Project\euler173.cs" />
+    <Compile Include="Challenges\Euler Project\Euler401.cs" />
     <Compile Include="Challenges\Hacker Earth\The Magical Shop.cs" />
     <Compile Include="Challenges\Hacker Rank\MergeList.cs" />
     <Compile Include="Challenges\Hacker Rank\nCrTable.cs" />

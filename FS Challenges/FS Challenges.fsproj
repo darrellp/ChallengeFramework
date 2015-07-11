@@ -53,6 +53,7 @@
     <Compile Include="Framework.fs" />
     <Compile Include="Test.fs" />
     <Compile Include="Euler247.fs" />
+    <Compile Include="Euler40.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
