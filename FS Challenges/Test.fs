@@ -13,7 +13,7 @@ main()
 #if CHALLENGE_RUNNER
 open FS_Challenges
 
-[<Challenge("Code Chef", "Test - FS", "http://www.codechef.com/problems/TEST")>]
+[<Challenge("Code Chef", "Test - fs", "http://www.codechef.com/problems/TEST")>]
 type TestChallenge() = 
     interface IChallenge with
         member this.Solve() = 

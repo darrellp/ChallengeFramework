@@ -12,7 +12,7 @@
 #include <memory>
 #include <string>
 
-prolog("UVA", Blocks, "Blocks - CPP", "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=37")
+prolog("UVA", Blocks, "Blocks - cpp", "https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=37")
 
 using namespace std;
 typedef vector<vector<int>> blkType;

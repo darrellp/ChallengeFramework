@@ -70,6 +70,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>CHALLENGE_RUNNER;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_WINDOWS;_USRDLL;CPPCHALLENGES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -93,6 +94,7 @@
     <ClCompile Include="Collatz.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Blocks.cpp" />
+    <ClCompile Include="Skyline.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Steps.cpp" />
     <ClCompile Include="Test.cpp" />

@@ -5,7 +5,7 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("Code Chef", "Test - CS", "http://www.codechef.com/problems/TEST")]
+		[Challenge("Code Chef", "Test - cs", "http://www.codechef.com/problems/TEST")]
 		public class ChefTest : IChallenge
 		{
 			public class LocalTest

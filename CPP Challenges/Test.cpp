@@ -12,7 +12,7 @@
 #include <functional>
 #include <vector>
 
-prolog("Code Chef", Test, "Test - CPP", "http://www.codechef.com/problems/TEST")
+prolog("Code Chef", Test, "Test - cpp", "http://www.codechef.com/problems/TEST")
 
 using namespace std;
 int main(void) {

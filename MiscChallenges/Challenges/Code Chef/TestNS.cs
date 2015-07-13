@@ -4,7 +4,7 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("Code Chef", "TestNS - CS", "http://www.codechef.com/problems/TEST")]
+		[Challenge("Code Chef", "TestNS - cs", "http://www.codechef.com/problems/TEST")]
 		public class ChefTestNS : IChallenge
 		{
 			public void Solve()
