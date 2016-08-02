@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace MiscChallenges.Challenges
@@ -34,7 +33,7 @@ namespace MiscChallenges.Challenges
 
             public class Votes
             {
-                private readonly List<string> _candidates = new List<string>();
+                private readonly List<string> _candidates;
                 private readonly List<List<int>> _ballots = new List<List<int>>();
                 private readonly List<bool> _eliminated = new List<bool>();
 
