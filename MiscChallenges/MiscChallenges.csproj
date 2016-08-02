@@ -82,6 +82,7 @@
     <Compile Include="Challenges\Programming Challenges\Bigger Square Please.cs" />
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
+    <Compile Include="Challenges\Programming Challenges\Summation of Four Primes.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
     <Compile Include="Challenges\UVA\Black Box.cs" />
     <Compile Include="Challenges\UVA\Ferry Loading III.cs" />
