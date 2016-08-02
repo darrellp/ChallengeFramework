@@ -79,6 +79,7 @@
     <Compile Include="Challenges\Hacker Rank\XoringNinja.cs" />
     <Compile Include="Challenges\Programming Challenges\AntOnAChessboard.cs" />
     <Compile Include="Challenges\Programming Challenges\ArcheologistsDilemma.cs" />
+    <Compile Include="Challenges\Programming Challenges\Australian Voting.cs" />
     <Compile Include="Challenges\Programming Challenges\Bigger Square Please.cs" />
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
