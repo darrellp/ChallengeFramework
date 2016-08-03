@@ -152,7 +152,7 @@ namespace MiscChallenges.Challenges
 
             private string Decrypt(string cryptLine)
             {
-                var cryptWords = cryptLine.Split(new[] { ' ' });
+                var cryptWords = cryptLine.Split(' ');
                 var decrypter = new Dictionary<char, char>();
 
                 for (var ch = 'a'; ch <= 'z'; ch++)
@@ -166,7 +166,7 @@ namespace MiscChallenges.Challenges
             // ReSharper disable once ParameterTypeCanBeEnumerable.Local
             bool FitWord(int iWord, string[] cryptWords, Dictionary<char, char> decrypter)
             {
-                if (iWord == _arrangedWords.Count())
+                if (iWord == _arrangedWords.Count)
                 {
                     return CheckSolution(cryptWords, decrypter);
                 }
