@@ -40,9 +40,13 @@ namespace MiscChallenges.Challenges
 			{
 				var logPuzzleLow = Math.Log(puzzle) / _nlog10;
 				var logPuzzleHigh = Math.Log(puzzle + 1) / _nlog10;
+
+                // We need to find a power of 2 whose base 10 log has a fractional part
+                // between fracPuzzleLow and fracPuzzleHigh
 				var fracPuzzleLow = logPuzzleLow - Math.Truncate(logPuzzleLow);
 				var fracPuzzleHigh = logPuzzleHigh - Math.Truncate(logPuzzleHigh);
 				// ReSharper disable once CompareOfFloatsByEqualityOperator
+                // fracPuzzleHigh always has to be larger than fracPuzzleLow...
 				if (fracPuzzleHigh == 0.0)
 				{
 					fracPuzzleHigh = 1.0;
@@ -71,8 +75,6 @@ namespace MiscChallenges.Challenges
 
 			public string RetrieveSampleInput()
 			{
-				// We eliminate this first newline in the caller so that the uninterrupted input
-				// can go at the left hand column.
 				return @"
 1
 2
@@ -82,7 +84,6 @@ namespace MiscChallenges.Challenges
 
 			public string RetrieveSampleOutput()
 			{
-				// Caller will eliminate first newline...
 				return @"
 7
 8
