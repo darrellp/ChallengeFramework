@@ -84,6 +84,8 @@
     <Compile Include="Challenges\Programming Challenges\CheckTheCheck.cs" />
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\CryptKicker.cs" />
+    <Compile Include="Challenges\Programming Challenges\File Fragmentation.cs" />
+    <Compile Include="Challenges\Programming Challenges\Pairsumonious Numbers.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
     <Compile Include="Challenges\Programming Challenges\Summation of Four Primes.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
