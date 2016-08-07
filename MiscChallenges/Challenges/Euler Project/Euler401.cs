@@ -14,7 +14,7 @@ namespace MiscChallenges.Challenges
 		{
 			private const long M = (long)1E15;
 			private const long R = (long)1E9;
-			static private long _sqrM;
+			private static long _sqrM;
 
 			public void Solve()
 			{
