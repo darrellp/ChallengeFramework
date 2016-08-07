@@ -88,6 +88,7 @@
     <Compile Include="Challenges\Programming Challenges\File Fragmentation.cs" />
     <Compile Include="Challenges\Programming Challenges\Pairsumonious Numbers.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
+    <Compile Include="Challenges\Programming Challenges\Stern-Brocot.cs" />
     <Compile Include="Challenges\Programming Challenges\Summation of Four Primes.cs" />
     <Compile Include="Challenges\Programming Challenges\Wheres Waldorf.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
