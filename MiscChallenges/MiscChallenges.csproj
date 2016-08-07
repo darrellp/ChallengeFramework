@@ -80,6 +80,7 @@
     <Compile Include="Challenges\Programming Challenges\AntOnAChessboard.cs" />
     <Compile Include="Challenges\Programming Challenges\ArcheologistsDilemma.cs" />
     <Compile Include="Challenges\Programming Challenges\Australian Voting.cs" />
+    <Compile Include="Challenges\Programming Challenges\Bicoloring.cs" />
     <Compile Include="Challenges\Programming Challenges\Bigger Square Please.cs" />
     <Compile Include="Challenges\Programming Challenges\CheckTheCheck.cs" />
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
