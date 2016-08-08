@@ -7,7 +7,7 @@ namespace MiscChallenges.Challenges
     public static partial class ChallengeClass
     {
         [Challenge("ProgChallenges", "Factovisors",
-            "http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=110108&format=html")]
+            "http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=110704&format=html")]
         public class Factovisors : IChallenge
         {
             public void Solve()
