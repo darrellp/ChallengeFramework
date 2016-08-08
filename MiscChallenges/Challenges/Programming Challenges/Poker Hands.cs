@@ -51,29 +51,6 @@ namespace MiscChallenges.Challenges
 				return new PokerDeal(blackHand, whiteHand);
 			}
 
-			public string RetrieveSampleInput()
-			{
-				return @"
-2H 3D 5S 9C KD 2C 3H 4S 8C AH
-2H 4S 4C 2D 4H 2S 8S AS QS 3S
-2H 3D 5S 9C KD 2C 3H 4S 8C KH
-2H 3D 5S 9C KD 2D 3H 5C 9S KH
-2H 2C 4D 5D 6D 2D 3H 3C 5H 6H
-2H 2C 4D 5D 6D 2D 2H 3C 5H 6H";
-			}
-
-			public string RetrieveSampleOutput()
-			{
-				return @"
-White wins.
-Black wins.
-Black wins.
-Tie.
-White wins.
-Black wins.
-";
-			}
-
 			internal class PokerDeal
 			{
 				internal List<Card> BlackHand { get; private set; }
@@ -295,85 +272,108 @@ Black wins.
 					return hand[4].Rank;
 				}
 			}
-		}
 
-		internal class Card : IComparable
-		{
-			internal char Suit { get; private set; }
-			internal byte Rank { get; private set; }
+		    internal class Card : IComparable
+		    {
+			    internal char Suit { get; private set; }
+			    internal byte Rank { get; private set; }
 
-			internal Card(char suit, byte rank)
+			    internal Card(char suit, byte rank)
+			    {
+				    Suit = suit;
+				    Rank = rank;
+			    }
+
+			    private static readonly Dictionary<char, byte> CharToRank = new Dictionary<char, byte>
+			    {
+				    {'2', 1},
+				    {'3', 2},
+				    {'4', 3},
+				    {'5', 4},
+				    {'6', 5},
+				    {'7', 6},
+				    {'8', 7},
+				    {'9', 8},
+				    {'T', 9},
+				    {'J', 10},
+				    {'Q', 11},
+				    {'K', 12},
+				    {'A', 13},
+			    };
+
+			    internal Card(string input)
+			    {
+				    Suit = input[1];
+				    Rank = CharToRank[input[0]];
+			    }
+
+			    public int CompareTo(object obj)
+			    {
+				    var card = obj as Card;
+				    if (card == null)
+				    {
+					    return 0;
+				    }
+				    var cmpRank = Rank.CompareTo(card.Rank);
+				    if (cmpRank == 0)
+				    {
+					    return Suit.CompareTo(card.Suit);
+				    }
+				    return cmpRank;
+			    }
+
+			    private static readonly Dictionary<char, string> SuitToString = new Dictionary<char, string>
+			    {
+				    {'C', "Clubs"},
+				    {'D', "Diamonds"},
+				    {'H', "Hearts"},
+				    {'S', "Spades"}
+			    };
+
+			    private static readonly string[] Ranks =
+			    {
+				    "2",
+				    "3",
+				    "4",
+				    "5",
+				    "6",
+				    "7",
+				    "8",
+				    "9",
+				    "10",
+				    "Jack",
+				    "Queen",
+				    "King",
+				    "Ace"
+			    };
+
+			    public override string ToString()
+			    {
+				    return Ranks[Rank - 1] + " of " + SuitToString[Suit];
+			    }
+		    }
+
+			public string RetrieveSampleInput()
 			{
-				Suit = suit;
-				Rank = rank;
+				return @"
+2H 3D 5S 9C KD 2C 3H 4S 8C AH
+2H 4S 4C 2D 4H 2S 8S AS QS 3S
+2H 3D 5S 9C KD 2C 3H 4S 8C KH
+2H 3D 5S 9C KD 2D 3H 5C 9S KH
+2H 2C 4D 5D 6D 2D 3H 3C 5H 6H
+2H 2C 4D 5D 6D 2D 2H 3C 5H 6H";
 			}
 
-			private static readonly Dictionary<char, byte> CharToRank = new Dictionary<char, byte>
+			public string RetrieveSampleOutput()
 			{
-				{'2', 1},
-				{'3', 2},
-				{'4', 3},
-				{'5', 4},
-				{'6', 5},
-				{'7', 6},
-				{'8', 7},
-				{'9', 8},
-				{'T', 9},
-				{'J', 10},
-				{'Q', 11},
-				{'K', 12},
-				{'A', 13},
-			};
-
-			internal Card(string input)
-			{
-				Suit = input[1];
-				Rank = CharToRank[input[0]];
-			}
-
-			public int CompareTo(object obj)
-			{
-				var card = obj as Card;
-				if (card == null)
-				{
-					return 0;
-				}
-				var cmpRank = Rank.CompareTo(card.Rank);
-				if (cmpRank == 0)
-				{
-					return Suit.CompareTo(card.Suit);
-				}
-				return cmpRank;
-			}
-
-			private static readonly Dictionary<char, string> SuitToString = new Dictionary<char, string>
-			{
-				{'C', "Clubs"},
-				{'D', "Diamonds"},
-				{'H', "Hearts"},
-				{'S', "Spades"}
-			};
-
-			private static readonly string[] Ranks =
-			{
-				"2",
-				"3",
-				"4",
-				"5",
-				"6",
-				"7",
-				"8",
-				"9",
-				"10",
-				"Jack",
-				"Queen",
-				"King",
-				"Ace"
-			};
-
-			public override string ToString()
-			{
-				return Ranks[Rank - 1] + " of " + SuitToString[Suit];
+				return @"
+White wins.
+Black wins.
+Black wins.
+Tie.
+White wins.
+Black wins.
+";
 			}
 		}
 	}

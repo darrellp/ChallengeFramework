@@ -33,6 +33,128 @@ namespace MiscChallenges.Challenges
 				}
 			}
 
+		    class Car
+		    {
+			    public Car(int arrivalTime, bool arriveRight, int index)
+			    {
+				    ArrivalTime = arrivalTime;
+				    ArriveRight = arriveRight;
+				    Index = index;
+			    }
+
+			    public int ArrivalTime { get; private set; }
+			    private bool ArriveRight { get; set; }
+			    public int Index { get; private set; }
+
+			    public bool ArriveLeft
+			    {
+				    get { return !ArriveRight; }
+			    }
+		    }
+
+		    class FerryCase
+		    {
+			    private readonly int _capacity;
+			    private readonly int _crossingTime;
+			    private readonly int _cCars;
+			    private readonly Queue<Car> _incomingCars;
+			    private int _simulationTime;
+			    private int _ferryArrival;
+
+			    readonly List<Car> _carsLoaded = new List<Car>();
+			    // Cars waiting at the right and left bank
+			    readonly Queue<Car> _carsRight = new Queue<Car>();
+			    readonly Queue<Car> _carsLeft = new Queue<Car>();
+			    bool _ferryOnLeft = true;
+
+			    // Our final result - time each car waited
+			    readonly int[] _unloadTimes;
+			    bool _fCarsInTransit = true;
+
+			    public FerryCase()
+			    {
+				    var vals = GetVals();
+				    _capacity = vals[0];
+				    _crossingTime = vals[1];
+				    _cCars = vals[2];
+				    _incomingCars = new Queue<Car>(_cCars);
+				    _unloadTimes = new int[_cCars];
+
+				    for (var iCar = 0; iCar < _cCars; iCar++)
+				    {
+					    // ReSharper disable once PossibleNullReferenceException
+					    var carVals = Console.ReadLine().Split(' ');
+					    var arrival = int.Parse(carVals[0]);
+					    var arriveRight = carVals[1] == "right";
+					    _incomingCars.Enqueue(new Car(arrival, arriveRight, iCar));
+				    }
+			    }
+
+			    public void SolveCase(bool fFirstCase)
+			    {
+				    _ferryArrival = -1;
+
+				    while (_fCarsInTransit)
+				    {
+					    if (_ferryArrival > 0 && (_incomingCars.Count == 0 || _incomingCars.Peek().ArrivalTime > _ferryArrival))
+					    {
+						    // Next event is ferry arrival
+
+						    var ferryHeadsBackImmediately = _carsRight.Count != 0 || _carsLeft.Count != 0;
+						    _simulationTime = _ferryArrival;
+						    foreach (var car in _carsLoaded)
+						    {
+							    _unloadTimes[car.Index] = _simulationTime;
+						    }
+						    _carsLoaded.Clear();
+						    _fCarsInTransit = _incomingCars.Count != 0 || ferryHeadsBackImmediately;
+						    _ferryOnLeft = !_ferryOnLeft;
+						    if (!ferryHeadsBackImmediately)
+						    {
+							    _ferryArrival = -1;
+						    }
+						    else
+						    {
+							    _ferryArrival = _simulationTime + _crossingTime;
+							    LoadFerry();
+						    }
+					    }
+					    else
+					    {
+						    // Next event is a car arrival
+						    var carArriving = _incomingCars.Dequeue();
+						    var carsQueued = carArriving.ArriveLeft ? _carsLeft : _carsRight;
+						    _simulationTime = carArriving.ArrivalTime;
+						    carsQueued.Enqueue(carArriving);
+						    if (_ferryArrival < 0)
+						    {
+							    _ferryArrival = _simulationTime + _crossingTime;
+							    LoadFerry();
+						    }
+					    }
+				    }
+				    if (!fFirstCase)
+				    {
+					    Console.WriteLine();
+				    }
+				    for (int iCar = 0; iCar < _cCars; iCar++)
+				    {
+					    Console.WriteLine(_unloadTimes[iCar]);
+				    }
+			    }
+
+			    private void LoadFerry()
+			    {
+				    var carsQueued = _ferryOnLeft ? _carsLeft : _carsRight;
+				    var cCarsToLoad = Math.Min(carsQueued.Count, _capacity);
+
+				    for (var iLoadCar = 0; iLoadCar < cCarsToLoad; iLoadCar++)
+				    {
+					    _carsLoaded.Add(carsQueued.Dequeue());
+				    }
+			    }
+		    }
+
 			public string RetrieveSampleInput()
 			{
 				return @"
@@ -72,128 +194,6 @@ namespace MiscChallenges.Challenges
 40
 60
 ";
-			}
-		}
-
-		class Car
-		{
-			public Car(int arrivalTime, bool arriveRight, int index)
-			{
-				ArrivalTime = arrivalTime;
-				ArriveRight = arriveRight;
-				Index = index;
-			}
-
-			public int ArrivalTime { get; private set; }
-			private bool ArriveRight { get; set; }
-			public int Index { get; private set; }
-
-			public bool ArriveLeft
-			{
-				get { return !ArriveRight; }
-			}
-		}
-
-		class FerryCase
-		{
-			private readonly int _capacity;
-			private readonly int _crossingTime;
-			private readonly int _cCars;
-			private readonly Queue<Car> _incomingCars;
-			private int _simulationTime;
-			private int _ferryArrival;
-
-			readonly List<Car> _carsLoaded = new List<Car>();
-			// Cars waiting at the right and left bank
-			readonly Queue<Car> _carsRight = new Queue<Car>();
-			readonly Queue<Car> _carsLeft = new Queue<Car>();
-			bool _ferryOnLeft = true;
-
-			// Our final result - time each car waited
-			readonly int[] _unloadTimes;
-			bool _fCarsInTransit = true;
-
-			public FerryCase()
-			{
-				var vals = GetVals();
-				_capacity = vals[0];
-				_crossingTime = vals[1];
-				_cCars = vals[2];
-				_incomingCars = new Queue<Car>(_cCars);
-				_unloadTimes = new int[_cCars];
-
-				for (var iCar = 0; iCar < _cCars; iCar++)
-				{
-					// ReSharper disable once PossibleNullReferenceException
-					var carVals = Console.ReadLine().Split(' ');
-					var arrival = int.Parse(carVals[0]);
-					var arriveRight = carVals[1] == "right";
-					_incomingCars.Enqueue(new Car(arrival, arriveRight, iCar));
-				}
-			}
-
-			public void SolveCase(bool fFirstCase)
-			{
-				_ferryArrival = -1;
-
-				while (_fCarsInTransit)
-				{
-					if (_ferryArrival > 0 && (_incomingCars.Count == 0 || _incomingCars.Peek().ArrivalTime > _ferryArrival))
-					{
-						// Next event is ferry arrival
-
-						var ferryHeadsBackImmediately = _carsRight.Count != 0 || _carsLeft.Count != 0;
-						_simulationTime = _ferryArrival;
-						foreach (var car in _carsLoaded)
-						{
-							_unloadTimes[car.Index] = _simulationTime;
-						}
-						_carsLoaded.Clear();
-						_fCarsInTransit = _incomingCars.Count != 0 || ferryHeadsBackImmediately;
-						_ferryOnLeft = !_ferryOnLeft;
-						if (!ferryHeadsBackImmediately)
-						{
-							_ferryArrival = -1;
-						}
-						else
-						{
-							_ferryArrival = _simulationTime + _crossingTime;
-							LoadFerry();
-						}
-					}
-					else
-					{
-						// Next event is a car arrival
-						var carArriving = _incomingCars.Dequeue();
-						var carsQueued = carArriving.ArriveLeft ? _carsLeft : _carsRight;
-						_simulationTime = carArriving.ArrivalTime;
-						carsQueued.Enqueue(carArriving);
-						if (_ferryArrival < 0)
-						{
-							_ferryArrival = _simulationTime + _crossingTime;
-							LoadFerry();
-						}
-					}
-				}
-				if (!fFirstCase)
-				{
-					Console.WriteLine();
-				}
-				for (int iCar = 0; iCar < _cCars; iCar++)
-				{
-					Console.WriteLine(_unloadTimes[iCar]);
-				}
-			}
-
-			private void LoadFerry()
-			{
-				var carsQueued = _ferryOnLeft ? _carsLeft : _carsRight;
-				var cCarsToLoad = Math.Min(carsQueued.Count, _capacity);
-
-				for (var iLoadCar = 0; iLoadCar < cCarsToLoad; iLoadCar++)
-				{
-					_carsLoaded.Add(carsQueued.Dequeue());
-				}
 			}
 		}
 	}
