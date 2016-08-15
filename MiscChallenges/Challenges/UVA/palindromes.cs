@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -32,7 +32,7 @@ namespace MiscChallenges.Challenges
 			public void Solve()
 			{
 				string nextString;
-				while ((nextString = Console.ReadLine()) != null)
+				while ((nextString = ReadLine()) != null)
 				{
 					var tag = string.Empty;
 					switch (CheckPalType(nextString))
@@ -53,11 +53,11 @@ namespace MiscChallenges.Challenges
 							tag = "a mirrored palindrome";
 							break;
 					}
-					Console.WriteLine(@"{0} -- is {1}.", nextString, tag);
-					// Because of the weird "after each output line, you must print an empty line"
-					// requirement.  I'm interepreting this literally - i.e., EACH output line,
-					// including the last one.
-					Console.WriteLine();
+                    WriteLine(@"{0} -- is {1}.", nextString, tag);
+                    // Because of the weird "after each output line, you must print an empty line"
+                    // requirement.  I'm interepreting this literally - i.e., EACH output line,
+                    // including the last one.
+                    WriteLine();
 				}
 			}
 

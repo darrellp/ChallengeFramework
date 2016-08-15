@@ -1,4 +1,5 @@
-﻿using System;
+﻿using static System.Math;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -22,11 +23,11 @@ namespace MiscChallenges.Challenges
 						{
 							continue;
 						}
-						ret += (fact18 / ((ulong)Math.Pow(6L, m3) * (ulong)Math.Pow(2L, m2))) *
+						ret += (fact18 / ((ulong)Pow(6L, m3) * (ulong)Pow(2L, m2))) *
 							Comb(10, m1) * Comb(10 - m1, m2) * Comb(10 - m1 - m2, m3);
 					}
 				}
-				Console.WriteLine(ret * 9 / 10);
+				WriteLine(ret * 9 / 10);
 			}
 
 			public string RetrieveSampleInput() { return null; }

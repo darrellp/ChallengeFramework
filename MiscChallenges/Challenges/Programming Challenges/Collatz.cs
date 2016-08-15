@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using static System.Console;
+using static System.Math;
 
 namespace MiscChallenges.Challenges
 {
@@ -19,12 +21,12 @@ namespace MiscChallenges.Challenges
 						break;
 					}
 
-					var low = Math.Min(nextCase.Item1, nextCase.Item2);
-					var high = Math.Max(nextCase.Item1, nextCase.Item2);
+					var low = Min(nextCase.Item1, nextCase.Item2);
+					var high = Max(nextCase.Item1, nextCase.Item2);
 					var c = Enumerable.Range(low, high - low + 1).
 						Select(CollatzCount).
 						Max();
-					Console.WriteLine(@"{0} {1} {2}", nextCase.Item1, nextCase.Item2, c);
+                    WriteLine(@"{0} {1} {2}", nextCase.Item1, nextCase.Item2, c);
 				}
 			}
 
@@ -50,7 +52,7 @@ namespace MiscChallenges.Challenges
 
 			private Tuple<int, int> GetCase()
 			{
-				var line = Console.ReadLine();
+				var line = ReadLine();
 				if (line == null)
 				{
 					return null;

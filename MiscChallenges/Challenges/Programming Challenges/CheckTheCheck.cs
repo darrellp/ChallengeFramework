@@ -1,5 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -20,13 +20,13 @@ namespace MiscChallenges.Challenges
                     GetBoard();
                     if (!EndFlag())
                     {
-                        Console.WriteLine("Game #" + iGame++ + ": " + GetCheck());
+                        WriteLine(@"Game #" + iGame++ + @": " + GetCheck());
                     }
                     else
                     {
                         break;
                     }
-                    Console.ReadLine();
+                    ReadLine();
                 }
             }
 
@@ -175,7 +175,7 @@ namespace MiscChallenges.Challenges
                 // ReSharper disable AssignNullToNotNullAttribute
                 for (var iRow = 0; iRow < 8; iRow++)
                 {
-                    _board[iRow] = Console.ReadLine().ToArray();
+                    _board[iRow] = ReadLine().ToArray();
                 }
                 // ReSharper restore AssignNullToNotNullAttribute
             }

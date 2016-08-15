@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static System.Console;
 
 // ReSharper disable LocalizableElement
 
@@ -41,7 +42,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
+                WriteLine("The smallest avg is {0} achieved by {1}", smallTot/99.0, denLow);
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -68,7 +69,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
+                WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -98,7 +99,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
+                WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -131,7 +132,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
+                WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
 
 				smallTot = int.MaxValue;
 				denLow = null;
@@ -168,7 +169,7 @@ namespace MiscChallenges.Challenges
 						}
 					}
 				}
-				Console.WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
+                WriteLine("The smallest avg is {0} achieved by {1}", smallTot / 99.0, denLow);
 			}
 
 			public string RetrieveSampleInput() { return null; }
@@ -179,12 +180,9 @@ namespace MiscChallenges.Challenges
 			{
 				private readonly int[] _dens;
 
-				public int Length
-				{
-					get { return _dens.Length; }
-				}
+				public int Length => _dens.Length;
 
-				public DenominationSet(params int[] dens)
+			    public DenominationSet(params int[] dens)
 				{
 					var set = new HashSet<int>(dens);
 					_dens = set.ToArray();

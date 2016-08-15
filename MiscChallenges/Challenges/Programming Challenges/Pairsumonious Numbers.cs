@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -107,7 +107,7 @@ namespace MiscChallenges.Challenges
                     }
 
                     // Couldn't find a suitable third sum so we have to give up
-                    Console.WriteLine("Impossible");
+                    WriteLine(@"Impossible");
                 }
 
                 private void PrintResult()
@@ -115,9 +115,9 @@ namespace MiscChallenges.Challenges
                     _bases.Sort();
                     for (var iBase = 0; iBase < _bases.Count - 1; iBase++)
                     {
-                        Console.Write(_bases[iBase] + " ");
+                        Write(_bases[iBase] + @" ");
                     }
-                    Console.WriteLine(_bases[_bases.Count - 1]);
+                    WriteLine(_bases[_bases.Count - 1]);
                 }
 
                 private bool SolveRest()

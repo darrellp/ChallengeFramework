@@ -1,5 +1,6 @@
 ﻿using System;
 using NumberTheoryLong;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -13,7 +14,7 @@ namespace MiscChallenges.Challenges
             {
                 while (true)
                 {
-                    var val = Console.ReadLine();
+                    var val = ReadLine();
                     if (val == null)
                     {
                         break;
@@ -52,7 +53,7 @@ namespace MiscChallenges.Challenges
             {
                 if (n < 8)
                 {
-                    Console.WriteLine(@"Impossible.");
+                    WriteLine(@"Impossible.");
                     return;
                 }
                 // ReSharper disable JoinDeclarationAndInitializer
@@ -64,7 +65,7 @@ namespace MiscChallenges.Challenges
                     if (n == 9)
                     {
                         // Scheme doesn't quite work for 9 so just return answer directly...
-                        Console.WriteLine( @"2 2 2 3" );
+                        WriteLine( @"2 2 2 3" );
                         return;
                     }
                     p1 = 2;
@@ -76,7 +77,7 @@ namespace MiscChallenges.Challenges
                 }
                 p3 = Goldbach(n - p1 - p2);
                 p4 = n - p1 - p2 - p3;
-                Console.WriteLine(@"{0} {1} {2} {3}", p1, p2, p3, p4);
+                WriteLine(@"{0} {1} {2} {3}", p1, p2, p3, p4);
             }
 
             public string RetrieveSampleInput()

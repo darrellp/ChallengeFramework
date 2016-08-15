@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using static System.Console;
+using static System.Math;
 
 namespace MiscChallenges.Challenges
 {
@@ -42,14 +43,11 @@ namespace MiscChallenges.Challenges
 				    Index = index;
 			    }
 
-			    public int ArrivalTime { get; private set; }
-			    private bool ArriveRight { get; set; }
-			    public int Index { get; private set; }
+			    public int ArrivalTime { get; }
+			    private bool ArriveRight { get; }
+			    public int Index { get; }
 
-			    public bool ArriveLeft
-			    {
-				    get { return !ArriveRight; }
-			    }
+			    public bool ArriveLeft => !ArriveRight;
 		    }
 
 		    class FerryCase
@@ -83,7 +81,7 @@ namespace MiscChallenges.Challenges
 				    for (var iCar = 0; iCar < _cCars; iCar++)
 				    {
 					    // ReSharper disable once PossibleNullReferenceException
-					    var carVals = Console.ReadLine().Split(' ');
+					    var carVals = ReadLine().Split(' ');
 					    var arrival = int.Parse(carVals[0]);
 					    var arriveRight = carVals[1] == "right";
 					    _incomingCars.Enqueue(new Car(arrival, arriveRight, iCar));
@@ -135,18 +133,18 @@ namespace MiscChallenges.Challenges
 				    }
 				    if (!fFirstCase)
 				    {
-					    Console.WriteLine();
+                        WriteLine();
 				    }
 				    for (int iCar = 0; iCar < _cCars; iCar++)
 				    {
-					    Console.WriteLine(_unloadTimes[iCar]);
+                        WriteLine(_unloadTimes[iCar]);
 				    }
 			    }
 
 			    private void LoadFerry()
 			    {
 				    var carsQueued = _ferryOnLeft ? _carsLeft : _carsRight;
-				    var cCarsToLoad = Math.Min(carsQueued.Count, _capacity);
+				    var cCarsToLoad = Min(carsQueued.Count, _capacity);
 
 				    for (var iLoadCar = 0; iLoadCar < cCarsToLoad; iLoadCar++)
 				    {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -15,7 +16,7 @@ namespace MiscChallenges.Challenges
 				PokerDeal deal;
 				while ((deal = NextDeal()) != null)
 				{
-					Console.WriteLine(FindWinner(deal));
+                    WriteLine(FindWinner(deal));
 				}
 			}
 
@@ -40,7 +41,7 @@ namespace MiscChallenges.Challenges
 
 			private PokerDeal NextDeal()
 			{
-				var input = Console.ReadLine();
+				var input = ReadLine();
 				if (input == null)
 				{
 					return null;
@@ -53,8 +54,8 @@ namespace MiscChallenges.Challenges
 
 			internal class PokerDeal
 			{
-				internal List<Card> BlackHand { get; private set; }
-				internal List<Card> WhiteHand { get; private set; }
+				internal List<Card> BlackHand { get; }
+				internal List<Card> WhiteHand { get; }
 
 				internal PokerDeal(List<Card> blackHand, List<Card> whiteHand)
 				{
@@ -262,7 +263,7 @@ namespace MiscChallenges.Challenges
 
 				private static int StraightFlushRanker(List<Card> hand)
 				{
-					for (var i = 1; i < hand.Count(); i++)
+					for (var i = 1; i < hand.Count; i++)
 					{
 						if (hand[i].Suit != hand[i - 1].Suit || hand[i].Rank != hand[i - 1].Rank + 1)
 						{
@@ -275,8 +276,8 @@ namespace MiscChallenges.Challenges
 
 		    internal class Card : IComparable
 		    {
-			    internal char Suit { get; private set; }
-			    internal byte Rank { get; private set; }
+			    internal char Suit { get; }
+			    internal byte Rank { get; }
 
 			    internal Card(char suit, byte rank)
 			    {

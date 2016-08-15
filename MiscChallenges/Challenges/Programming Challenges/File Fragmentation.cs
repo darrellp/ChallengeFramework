@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -13,13 +14,13 @@ namespace MiscChallenges.Challenges
             public void Solve()
             {
                 var cCases = GetVal();
-                Console.ReadLine();
+                ReadLine();
 
                 for (var iCase = 0; iCase < cCases; iCase++)
                 {
                     var fragments = new List<string>();
                     string curFragment;
-                    while ((curFragment = Console.ReadLine()) != null)
+                    while ((curFragment = ReadLine()) != null)
                     {
                         if (curFragment == String.Empty)
                         {
@@ -43,14 +44,14 @@ namespace MiscChallenges.Challenges
                     var testFile = fragments[0] + otherHalf;
                     if (Check(testFile, fragments, fileLength))
                     {
-                        Console.WriteLine(testFile);
+                        WriteLine(testFile);
                         return;
                     }
                     // Okay, try the other way around
                     testFile = otherHalf + fragments[0];
                     if (Check(testFile, fragments, fileLength))
                     {
-                        Console.WriteLine(testFile);
+                        WriteLine(testFile);
                         return;
                     }
                 }

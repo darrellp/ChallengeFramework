@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -13,7 +14,7 @@ namespace MiscChallenges.Challenges
             public void Solve()
             {
                 var cCases = GetVal();
-                Console.ReadLine();
+                ReadLine();
                 var firstTime = true;
 
                 for (var iElection = 0; iElection < cCases; iElection++)
@@ -21,12 +22,12 @@ namespace MiscChallenges.Challenges
                     var votes = new Votes();
                     var winners = votes.Solve();
 
-                    Console.Write((firstTime ? string.Empty : Environment.NewLine));
+                    Write((firstTime ? string.Empty : Environment.NewLine));
                     firstTime = false;
 
                     foreach (var winner in winners)
                     {
-                        Console.WriteLine(winner);
+                        WriteLine(winner);
                     }
                 }
             }
@@ -43,12 +44,12 @@ namespace MiscChallenges.Challenges
                     _candidates = new List<string>();
                     for (var i = 0; i < cCandidates; i++)
                     {
-                        _candidates.Add(Console.ReadLine());
+                        _candidates.Add(ReadLine());
                         _eliminated.Add(false);
                     }
 
                     string ballots;
-                    while ((ballots = Console.ReadLine()) != string.Empty && ballots != null)
+                    while ((ballots = ReadLine()) != string.Empty && ballots != null)
                     {
                         _ballots.Add(
                             ballots.Split(' ').

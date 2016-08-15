@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -20,19 +20,19 @@ namespace MiscChallenges.Challenges
 
                 for (var iWord = 0; iWord < cWords; iWord++)
                 {
-                    _words.Add(Console.ReadLine());
+                    _words.Add(ReadLine());
                 }
 
                 ArrangeWords();
 
                 while (true)
                 {
-                    var cryptLine = Console.ReadLine();
+                    var cryptLine = ReadLine();
                     if (cryptLine == null)
                     {
                         break;
                     }
-                    Console.WriteLine(Decrypt(cryptLine));
+                    WriteLine(Decrypt(cryptLine));
                 }
             }
 

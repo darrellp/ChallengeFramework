@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -21,7 +19,7 @@ namespace MiscChallenges.Challenges
                     }
                     if (vals[0] == vals[1])
                     {
-                        Console.WriteLine("I");
+                        WriteLine(@"I");
                         continue;
                     }
                     GetSequence(vals[0], vals[1]);
@@ -48,20 +46,20 @@ namespace MiscChallenges.Challenges
                     }
                     if (ncd < dcn)
                     {
-                        Console.Write("L");
+                        Write(@"L");
                         rDen = curDen;
                         rNum = curNum;
                     }
                     else
                     {
-                        Console.Write("R");
+                        Write(@"R");
                         lDen = curDen;
                         lNum = curNum;
                     }
                     curDen = lDen + rDen;
                     curNum = lNum + rNum;
                 }
-                Console.WriteLine();
+                WriteLine();
             }
 
 

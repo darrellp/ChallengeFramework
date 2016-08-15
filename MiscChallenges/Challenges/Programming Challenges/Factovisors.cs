@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using NumberTheoryLong;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -20,10 +21,7 @@ namespace MiscChallenges.Challenges
                         break;
                     }
                     var fIsDivisible = IsDivisible(nextCase.Item2, nextCase.Item1);
-                    Console.WriteLine("{2} {1} {0}!",
-                        nextCase.Item1,
-                        fIsDivisible ? "divides" : "does not divide",
-                        nextCase.Item2);
+                    WriteLine($"{nextCase.Item2} {(fIsDivisible ? "divides" : "does not divide")} {nextCase.Item1}!");
                 }
             }
 
@@ -49,7 +47,7 @@ namespace MiscChallenges.Challenges
 
             private Tuple<int, int> GetCase()
             {
-                var line = Console.ReadLine();
+                var line = ReadLine();
                 if (line == null)
                 {
                     return null;

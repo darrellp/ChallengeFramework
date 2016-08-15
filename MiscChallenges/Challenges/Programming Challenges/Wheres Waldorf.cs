@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -18,7 +18,7 @@ namespace MiscChallenges.Challenges
 
                 public WaldorfCase()
                 {
-                    Console.ReadLine();
+                    ReadLine();
                     var dims = GetVals();
                     _rows = dims[0];
                     _columns = dims[1];
@@ -26,13 +26,13 @@ namespace MiscChallenges.Challenges
                     // ReSharper disable PossibleNullReferenceException
                     for (var iRow = 0; iRow < _rows; iRow++)
                     {
-                        _grid.Add(Console.ReadLine().ToUpper());
+                        _grid.Add(ReadLine().ToUpper());
                     }
                     var cWords = GetVal();
                     _searchWords = new List<string>(cWords);
                     for (var iWord = 0; iWord < cWords; iWord++)
                     {
-                        _searchWords.Add(Console.ReadLine().ToUpper());
+                        _searchWords.Add(ReadLine().ToUpper());
                     }
                     // ReSharper restore PossibleNullReferenceException
                 }
@@ -53,7 +53,7 @@ namespace MiscChallenges.Challenges
                         {
                             if (_grid[iRow][iCol] == word[0] && CheckLocation(iRow, iCol, word))
                             {
-                                Console.WriteLine("{0} {1}", iRow + 1, iCol + 1);
+                                WriteLine($"{iRow + 1} {iCol + 1}");
                             }
                         }
                     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Priority_Queue;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -17,13 +18,13 @@ namespace MiscChallenges.Challenges
 				bool firstCase = true;
 				for (var iCase = 0; iCase < nCases; iCase++)
 				{
-					// Skip the blank line between cases in the input
-					Console.ReadLine();
+                    // Skip the blank line between cases in the input
+                    ReadLine();
 
 					// Write the blank line between output cases if necessary
 					if (!firstCase)
 					{
-						Console.WriteLine();
+                        WriteLine();
 					}
 					firstCase = false;
 
@@ -33,7 +34,7 @@ namespace MiscChallenges.Challenges
 					// Write each value in the solution on a separate line
 					foreach (var getValue in caseCur.Solve())
 					{
-						Console.WriteLine(@"{0}", getValue);
+                        WriteLine(@"{0}", getValue);
 					}
 				}
 			}
@@ -45,7 +46,7 @@ namespace MiscChallenges.Challenges
  
 				public BlackBoxCase()
 				{
-					Console.ReadLine();		// We don't really need to know these numbers - they're implicit
+                    ReadLine();		// We don't really need to know these numbers - they're implicit
 					_added = GetVals();
 					_getCounts = GetVals();
 				}

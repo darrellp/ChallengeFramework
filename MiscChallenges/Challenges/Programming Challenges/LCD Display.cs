@@ -1,5 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -15,7 +15,7 @@ namespace MiscChallenges.Challenges
                 while (true)
                 {
                     // ReSharper disable PossibleNullReferenceException
-                    var vals = Console.ReadLine().Split(' ');
+                    var vals = ReadLine().Split(' ');
                     // ReSharper restore PossibleNullReferenceException
                     var size = int.Parse(vals[0]);
                     var digitString = vals[1];
@@ -25,7 +25,7 @@ namespace MiscChallenges.Challenges
                     }
                     if (!firstTime)
                     {
-                        Console.WriteLine();
+                        WriteLine();
                     }
                     var lcdMaker = new LCDMaker(digitString, size);
                     lcdMaker.AppendLCD();
@@ -102,12 +102,12 @@ namespace MiscChallenges.Challenges
                                 break;
 
                             case LCDState.Between:
-                                Console.Write(Space);
+                                Write(Space);
                                 _state = _nextState;
                                 break;
 
                             case LCDState.Blank:
-                                Console.Write(_internalBlank);
+                                Write(_internalBlank);
                                 _state = _nextState;
                                 break;
 
@@ -128,7 +128,7 @@ namespace MiscChallenges.Challenges
                                 break;
 
                             case LCDState.EOL:
-                                Console.WriteLine();
+                                WriteLine();
                                 if (_row == 0)
                                 {
                                     _state = LCDState.TL;
@@ -164,7 +164,7 @@ namespace MiscChallenges.Challenges
                 {
                     var onLeft = (_state == LCDState.BL || _state == LCDState.TL);
 
-                    Console.Write(digitToBarPresence[_digits[_charIndex]] ? "|" : Space);
+                    Write(digitToBarPresence[_digits[_charIndex]] ? "|" : Space);
 
                     _state = onLeft
                         ? LCDState.Blank
@@ -174,7 +174,7 @@ namespace MiscChallenges.Challenges
 
                 private void DrawCrossBar(bool[] digitToBarPresence, LCDState nextState)
                 {
-                    Console.Write(digitToBarPresence[_digits[_charIndex]] ? _crossBar : _crossBarBlank);
+                    Write(digitToBarPresence[_digits[_charIndex]] ? _crossBar : _crossBarBlank);
                     _charIndex++;
                     _state = _charIndex == _digits.Length ? LCDState.EOL : LCDState.Between;
                     _nextState = nextState;

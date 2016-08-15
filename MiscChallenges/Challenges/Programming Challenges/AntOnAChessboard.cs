@@ -1,4 +1,5 @@
-﻿using System;
+﻿using static System.Console;
+using static System.Math;
 
 namespace MiscChallenges.Challenges
 {
@@ -21,13 +22,13 @@ namespace MiscChallenges.Challenges
 					}
 
 					GetValue(nextCase, out row, out col);
-					Console.WriteLine(@"{0} {1}", col, row);
+					WriteLine(@"{0} {1}", col, row);
 				}
 			}
 
 			private static void GetValue(int nextCase, out int row, out int col)
 			{
-				var innerSquareRoot = (int) Math.Floor(Math.Sqrt(nextCase - 1));
+				var innerSquareRoot = (int)Floor(Sqrt(nextCase - 1));
 				var innerSquare = innerSquareRoot * innerSquareRoot;
 
 				var rest = nextCase - innerSquare;

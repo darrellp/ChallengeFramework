@@ -4,9 +4,9 @@ namespace MiscChallenges
 {
 	class ChallengeInfo : IComparable
 	{
-		internal string Name { get; private set; }
-		internal string Contest { get; private set; }
-		internal IChallenge Challenge { get; private set; }
+		internal string Name { get; }
+		internal string Contest { get; }
+		internal IChallenge Challenge { get; }
 		internal Uri Uri { get; private set; }
 
 		internal ChallengeInfo(string name, string contest, IChallenge challenge, Uri uri = null)

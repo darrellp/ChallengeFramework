@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using static System.Console;
+using static System.Math;
 
 namespace MiscChallenges.Challenges
 {
@@ -12,10 +13,10 @@ namespace MiscChallenges.Challenges
 			public void Solve()
 			{
 				// ReSharper disable AssignNullToNotNullAttribute
-				var cPuzzles = int.Parse(Console.ReadLine());
+				var cPuzzles = int.Parse(ReadLine());
 				for (var iPuzzle = 0; iPuzzle < cPuzzles; iPuzzle++)
 				{
-					var puzzle = int.Parse(Console.ReadLine());
+					var puzzle = int.Parse(ReadLine());
 					SolvePuzzle(puzzle);
 				}
 				// ReSharper restore AssignNullToNotNullAttribute
@@ -25,10 +26,10 @@ namespace MiscChallenges.Challenges
 			{
 				var initboard = new Board868(puzzle, new Board868(puzzle), 0);
 				var res = initboard.Solve(puzzle * puzzle);
-				Console.WriteLine(res.Count);
+                WriteLine(res.Count);
 				foreach (var board in res)
 				{
-					Console.WriteLine(@"{0} {1} {2}", board.Row, board.Col, board.SquareSize);
+                    WriteLine(@"{0} {1} {2}", board.Row, board.Col, board.SquareSize);
 				}
 			}
 
@@ -74,8 +75,7 @@ namespace MiscChallenges.Challenges
 
 	internal class Board868
 	{
-		private readonly int _boardSize;
-		private readonly int[,] _board;
+	    private readonly int[,] _board;
 		private readonly int _placeRow = -1;
 		private readonly int _placeCol = -1;
 		private int _bestSquareSize;
@@ -92,27 +92,16 @@ namespace MiscChallenges.Challenges
 		private int _ulSize;
 		private int _urSize;
 
-		public int BoardSize
-		{
-			get { return _boardSize; }
-		}
+		//public int BoardSize => _boardSize;
+        public int BoardSize { get; }
 
-		public int Row
-		{
-			get { return _placeRow; }
-		}
+	    public int Row => _placeRow;
 
-		public int Col
-		{
-			get { return _placeCol; }
-		}
+	    public int Col => _placeCol;
 
-		public int SquareSize
-		{
-			get { return _bestSquareSize; }
-		}
+	    public int SquareSize => _bestSquareSize;
 
-		/// <summary>
+	    /// <summary>
 		/// Check that the lower right border of a square is empty
 		/// </summary>
 		/// <remarks>
@@ -187,7 +176,7 @@ namespace MiscChallenges.Challenges
 
 			// Grow the square below and to the right checking the lower and right border
 			// at each expansion
-			for (var size = 1; size < BoardSize - Math.Min(col, row) + 1; size++)
+			for (var size = 1; size < BoardSize - Min(col, row) + 1; size++)
 			{
 				if (!CheckLowerRightBorderIsEmpty(row, col, size))
 				{
@@ -196,7 +185,7 @@ namespace MiscChallenges.Challenges
 				}
 			}
 
-			return BoardSize - Math.Min(col, row);
+			return BoardSize - Min(col, row);
 		}
 
 		/// <summary>
@@ -282,13 +271,10 @@ namespace MiscChallenges.Challenges
 			}
 
 			// Did we find a solution among our children?
-			if (curBest != null)
-			{
-				// Add our board to it
-				curBest.Add(this);
-			}
+		    // Add our board to it
+		    curBest?.Add(this);
 
-			// Return best solution found
+		    // Return best solution found
 			return curBest;
 		}
 
@@ -353,7 +339,7 @@ namespace MiscChallenges.Challenges
 		/// <param name="boardSize">Size of the board</param>
 		public Board868(int boardSize)
 		{
-			_boardSize = boardSize;
+			BoardSize = boardSize;
 			_board = new int[boardSize, boardSize];
 		}
 
@@ -371,7 +357,7 @@ namespace MiscChallenges.Challenges
 		public Board868(int boardSize, Board868 parent, int searchRow)
 		{
 			// Inherit stuff from the parent
-			_boardSize = boardSize;
+			BoardSize = boardSize;
 			_board = (int[,])parent._board.Clone();
 			_ulSize = parent._ulSize;
 			_urSize = parent._urSize;

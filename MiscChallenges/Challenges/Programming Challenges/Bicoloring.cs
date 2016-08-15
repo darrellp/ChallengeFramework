@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using edge = System.Tuple<int, int>;
+using static System.Console;
 
 namespace MiscChallenges.Challenges
 {
@@ -110,7 +111,7 @@ namespace MiscChallenges.Challenges
                                          _vertexColors[vtx2] != Color.Uncolored);
                             if (_vertexColors[vtx1] == _vertexColors[vtx2])
                             {
-                                Console.WriteLine("NOT BICOLORABLE.");
+                                WriteLine(@"NOT BICOLORABLE.");
                                 return;
                             }
                             edgesChecked[edgeIndex] = true;
@@ -132,7 +133,7 @@ namespace MiscChallenges.Challenges
                             }
                         }
                     }
-                    Console.WriteLine("BICOLORABLE.");
+                    WriteLine(@"BICOLORABLE.");
                 }
             }
 

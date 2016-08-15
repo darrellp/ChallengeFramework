@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using static System.Console;
+using static System.Math;
 
 namespace MiscChallenges.Challenges
 {
@@ -22,7 +23,7 @@ namespace MiscChallenges.Challenges
 						break;
 					}
 					var totalRequired = vals[1];
-					Console.WriteLine(@"{0}", GetSeqValue(totalRequired, GetVals()));
+                    WriteLine(@"{0}", GetSeqValue(totalRequired, GetVals()));
 				}
 			}
 
@@ -50,7 +51,7 @@ namespace MiscChallenges.Challenges
 							}
 							sum -= sequence[iTail++];
 						}
-						longestRun = Math.Min(longestRun, iFront - iTail + 1);
+						longestRun = Min(longestRun, iFront - iTail + 1);
 					}
 				}
 				return longestRun == int.MaxValue ? 0 : longestRun;

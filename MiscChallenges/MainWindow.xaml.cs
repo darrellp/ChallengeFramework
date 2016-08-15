@@ -155,7 +155,7 @@ namespace MiscChallenges
 
 			if (challengeDataString != null)
 			{
-				challengeData = challengeDataString.Substring(Environment.NewLine.Count());
+				challengeData = challengeDataString.Substring(Environment.NewLine.Length);
 			}
 			return challengeData;
 		}
@@ -216,7 +216,7 @@ namespace MiscChallenges
 			var strResultString = challenge.RetrieveSampleOutput();
 			var isResult = strResultString != null && _originalInput;
 
-			var isSuccess = isResult && result == strResultString.Substring(Environment.NewLine.Count());
+			var isSuccess = isResult && result == strResultString.Substring(Environment.NewLine.Length);
 			var colorOutput = Colors.Black;
 			svOutput.ScrollToTop();
 
@@ -308,7 +308,7 @@ namespace MiscChallenges
 		private void VisitURI(object sender, RoutedEventArgs e)
 		{
 			var challengeInfo = tvChallenges.SelectedItem as ChallengeInfo;
-			if (challengeInfo == null || challengeInfo.Uri == null)
+			if (challengeInfo?.Uri == null)
 			{
 				return;
 			}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using static System.Console;
+using static System.Math;
 
 namespace MiscChallenges.Challenges
 {
@@ -8,8 +9,8 @@ namespace MiscChallenges.Challenges
 			"http://www.programming-challenges.com/pg.php?page=downloadproblem&probid=110503&format=html")]
 		public class ArcheologistsDilemma : IChallenge
 		{
-			private readonly double _nlog10 = Math.Log(10);
-			private readonly double _log2 = Math.Log(2)/Math.Log(10);
+			private readonly double _nlog10 = Log(10);
+			private readonly double _log2 = Log(2)/ Log(10);
 
 			public void Solve()
 			{
@@ -25,7 +26,7 @@ namespace MiscChallenges.Challenges
 			static int NextCase(out int length)
 			{
 				// ReSharper disable once PossibleNullReferenceException
-				var line = Console.ReadLine();
+				var line = ReadLine();
 				if (line == null)
 				{
 					length = 0;
@@ -38,13 +39,13 @@ namespace MiscChallenges.Challenges
 
 			private void SolvePuzzle(int puzzle, int size)
 			{
-				var logPuzzleLow = Math.Log(puzzle) / _nlog10;
-				var logPuzzleHigh = Math.Log(puzzle + 1) / _nlog10;
+				var logPuzzleLow = Log(puzzle) / _nlog10;
+				var logPuzzleHigh = Log(puzzle + 1) / _nlog10;
 
                 // We need to find a power of 2 whose base 10 log has a fractional part
                 // between fracPuzzleLow and fracPuzzleHigh
-				var fracPuzzleLow = logPuzzleLow - Math.Truncate(logPuzzleLow);
-				var fracPuzzleHigh = logPuzzleHigh - Math.Truncate(logPuzzleHigh);
+				var fracPuzzleLow = logPuzzleLow - Truncate(logPuzzleLow);
+				var fracPuzzleHigh = logPuzzleHigh - Truncate(logPuzzleHigh);
 				// ReSharper disable once CompareOfFloatsByEqualityOperator
                 // fracPuzzleHigh always has to be larger than fracPuzzleLow...
 				if (fracPuzzleHigh == 0.0)
@@ -58,10 +59,10 @@ namespace MiscChallenges.Challenges
 				{
 					if (fracPuzzleLow <= fracCur && fracCur < fracPuzzleHigh)
 					{
-						var cDigits = (int)Math.Floor(exp * _log2) + 1;
+						var cDigits = (int)Floor(exp * _log2) + 1;
 						if (cDigits >= 2 * size + 1)
 						{
-							Console.WriteLine(exp);
+                            WriteLine(exp);
 							return;
 						}
 					}
