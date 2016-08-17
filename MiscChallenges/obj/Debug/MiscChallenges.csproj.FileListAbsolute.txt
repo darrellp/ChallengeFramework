@@ -1,0 +1,22 @@
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.exe.config
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.exe
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.pdb
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\FS_Challenges.dll
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\NumberTheoryBig.dll
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\NumberTheoryLong.dll
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\Priority Queue.dll
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\FSharp.Core.dll
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\FS_Challenges.pdb
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\FS_Challenges.xml
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\bin\Debug\FSharp.Core.xml
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.csprojResolveAssemblyReference.cache
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MainWindow.baml
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MainWindow.g.cs
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\App.g.cs
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges_Content.g.cs
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges_MarkupCompile.cache
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.g.resources
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.Properties.Resources.resources
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.csproj.GenerateResource.Cache
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.exe
+C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.pdb

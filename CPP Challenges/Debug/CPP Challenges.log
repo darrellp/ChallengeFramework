@@ -1,0 +1,14 @@
+﻿  Test.cpp
+  Steps.cpp
+  stdafx.cpp
+  Skyline.cpp
+  Blocks.cpp
+  dllmain.cpp
+  Collatz.cpp
+  Challenge.cpp
+  BlackBox.cpp
+  Generating Code...
+     Creating library C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\Debug\CPP Challenges.lib and object C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\Debug\CPP Challenges.exp
+  CPP Challenges.vcxproj -> C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\Debug\CPP Challenges.dll
+  CPP Challenges.vcxproj -> C:\Users\Darrell\Documents\Visual Studio 2015\Projects\Github\ChallengeFramework\Debug\CPP Challenges.pdb (Full PDB)
+          1 file(s) copied.

@@ -88,6 +88,7 @@
     <Compile Include="Challenges\Programming Challenges\CryptKicker.cs" />
     <Compile Include="Challenges\Programming Challenges\Factovisors.cs" />
     <Compile Include="Challenges\Programming Challenges\File Fragmentation.cs" />
+    <Compile Include="Challenges\Programming Challenges\Is Bigger Smarter.cs" />
     <Compile Include="Challenges\Programming Challenges\LCD Display.cs" />
     <Compile Include="Challenges\Programming Challenges\Pairsumonious Numbers.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
