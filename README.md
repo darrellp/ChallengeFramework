@@ -1,4 +1,7 @@
 # ChallengeFramework
+There's a CodeProject article on this software here:
+  http://www.codeproject.com/Articles/1008583/Coding-Challenges-Framework
+
 This is a framework for writing code for the many coding challenges out there.
 I did a lot of these and got tired of creating a new project each time, putting
 in boilerplate timing code, having a million project spread hither and thither.
