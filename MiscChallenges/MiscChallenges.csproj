@@ -97,6 +97,7 @@
     <Compile Include="Challenges\Programming Challenges\Stern-Brocot.cs" />
     <Compile Include="Challenges\Programming Challenges\Summation of Four Primes.cs" />
     <Compile Include="Challenges\Programming Challenges\Wheres Waldorf.cs" />
+    <Compile Include="Challenges\Sphere\Adding Reversed Numbers.cs" />
     <Compile Include="Challenges\Sphere\LifeTheUniverseAndEverything.cs" />
     <Compile Include="Challenges\Sphere\Prime Generator.cs" />
     <Compile Include="Challenges\Talent Buddy\InvertBinaryTree.cs" />
