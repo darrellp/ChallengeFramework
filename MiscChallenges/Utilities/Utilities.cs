@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
+using static System.Console;
 // ReSharper disable AssignNullToNotNullAttribute
 using System.Collections.Generic;
 using System.Linq;
@@ -40,33 +42,37 @@ namespace MiscChallenges.Challenges
 			return den / Fact(k);
 		}
 
+	    private static string ReadAll()
+	    {
+	        string nextLine;
+	        StringBuilder sb = new StringBuilder();
+
+	        while ((nextLine = ReadLine()) != null)
+	        {
+	            sb.Append(nextLine + "\r\n");
+	        }
+	        return sb.ToString();
+	    }
+
 		public static int GetVal()
 		{
-			return int.Parse(Console.ReadLine());
+			return int.Parse(ReadLine());
 		}
 
 		public static List<int> GetVals()
 		{
-			var line = Console.ReadLine();
-			if (line == null)
-			{
-				return null;
-			}
-			return line.Split(' ').
-				Select(int.Parse).
-				ToList();
+			var line = ReadLine();
+		    return line?.Split(' ').
+			    Select(int.Parse).
+			    ToList();
 		}
 
 		public static List<double> GetDblVals()
 		{
-			var line = Console.ReadLine();
-			if (line == null)
-			{
-				return null;
-			}
-			return line.Split(' ').
-				Select(double.Parse).
-				ToList();
+			var line = ReadLine();
+		    return line?.Split(' ').
+			    Select(double.Parse).
+			    ToList();
 		}
 
 		public static IEnumerable<T> Iterate<T>(T start, Func<T, T> next, Func<T, bool> terminate = null)
