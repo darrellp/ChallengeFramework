@@ -126,7 +126,7 @@ int main()
 			cout << pq.Peek() << endl;
 			pq.SetN(iGet + 1);
 		}
-		delete adds;
+		delete[] adds;
 	}
 
 	return 0;

@@ -41,3 +41,5 @@ C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChal
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.csproj.GenerateResource.Cache
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.exe
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.pdb
+C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.exe.CodeAnalysisLog.xml
+C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.exe.lastcodeanalysissucceeded
