@@ -41,3 +41,6 @@ C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChal
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.csproj.GenerateResource.Cache
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.exe
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChallenges.pdb
+C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MoreLinq.dll
+C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\System.ValueTuple.dll
+C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MoreLinq.xml
