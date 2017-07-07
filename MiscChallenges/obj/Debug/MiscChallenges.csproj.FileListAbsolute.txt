@@ -44,5 +44,6 @@ C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\obj\Debug\MiscChal
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MoreLinq.dll
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\System.ValueTuple.dll
 C:\Users\jar_c\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MoreLinq.xml
-C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.exe.CodeAnalysisLog.xml
-C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MiscChallenges.exe.lastcodeanalysissucceeded
+C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MoreLinq.dll
+C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\System.ValueTuple.dll
+C:\Users\Darrell Plank\Source\Repos\ChallengeFramework\MiscChallenges\bin\Debug\MoreLinq.xml

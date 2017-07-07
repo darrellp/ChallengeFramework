@@ -163,7 +163,6 @@ namespace MiscChallenges.Challenges
                 return new string(cryptLine.Select(ch => ch == ' ' ? ' ' : decrypter[ch]).ToArray());
             }
 
-            // ReSharper disable once ParameterTypeCanBeEnumerable.Local
             bool FitWord(int iWord, string[] cryptWords, Dictionary<char, char> decrypter)
             {
                 if (iWord == _arrangedWords.Count)

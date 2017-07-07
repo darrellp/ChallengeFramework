@@ -6,9 +6,7 @@ namespace MiscChallenges.Challenges
 {
     public static partial class ChallengeClass
     {
-        /// <summary>
-        /// </summary>
-        [Challenge("Advent of Code", "SecurityThroughObscurity", "https://adventofcode.com/2016/day/4")]
+        [Challenge("Advent of Code", "Security Through Obscurity", "https://adventofcode.com/2016/day/4")]
         public class SecurityThroughObscurity : IChallenge
         {
             public void Solve()
@@ -69,7 +67,8 @@ namespace MiscChallenges.Challenges
 
             public string RetrieveSampleInput()
             {
-                return @"aczupnetwp-mfyyj-opalcexpye-977[peyac]
+                return @"
+aczupnetwp-mfyyj-opalcexpye-977[peyac]
 qzchnzbshud-cxd-trdq-sdrshmf-105[jqexn]
 molgbzqfib-bdd-mrozexpfkd-289[bdfmo]
 enzcntvat-pnaql-qrfvta-351[antqv]
