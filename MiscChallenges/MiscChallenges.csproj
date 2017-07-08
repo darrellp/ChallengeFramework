@@ -78,6 +78,7 @@
     <Compile Include="Challenges\Advent of Code\Bathroom Security.cs" />
     <Compile Include="Challenges\Advent of Code\Explosives in Cyberspace.cs" />
     <Compile Include="Challenges\Advent of Code\How About a Nice Game of Chess.cs" />
+    <Compile Include="Challenges\Advent of Code\Leonardos Monorail.cs" />
     <Compile Include="Challenges\Advent of Code\No Time for a Taxicab.cs" />
     <Compile Include="Challenges\Advent of Code\Security Through Obscurity.cs" />
     <Compile Include="Challenges\Advent of Code\Signals and Noise.cs" />
