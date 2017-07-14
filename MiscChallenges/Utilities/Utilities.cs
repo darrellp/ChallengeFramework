@@ -59,6 +59,12 @@ namespace MiscChallenges.Challenges
 			return int.Parse(ReadLine());
 		}
 
+	    public static int? GetValue()
+	    {
+	        var line = ReadLine();
+	        return line == null ? null : (int?)int.Parse(line);
+	    }
+
 		public static List<int> GetVals()
 		{
 			var line = ReadLine();
