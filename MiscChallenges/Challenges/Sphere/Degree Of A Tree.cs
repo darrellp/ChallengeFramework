@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using static System.Console;
 using static System.Math;
 
@@ -16,10 +14,8 @@ namespace MiscChallenges.Challenges
             public void Solve()
             {
                 ReadLine();
-                int? nVerticesTest;
-                while ((nVerticesTest = GetValue()) != null)
+                while (GetValue() != null)
                 {
-                    var nVertices = nVerticesTest.Value;
                     var treeVals = GetVals();
 
                     GetDegree(treeVals, out int treeDegree, out _);
