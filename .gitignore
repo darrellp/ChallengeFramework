@@ -261,3 +261,5 @@ __pycache__/
 *.cache
 
 *.txt
+
+MiscChallenges/obj/Debug/
