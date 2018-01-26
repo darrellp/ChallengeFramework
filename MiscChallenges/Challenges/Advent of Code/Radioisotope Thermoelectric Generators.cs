@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using RegexStringLibrary;
 using static System.Console;
@@ -13,7 +12,7 @@ namespace MiscChallenges.Challenges
         [Challenge("Advent of Code", "Radioisotope Thermoelectric Generators", "https://adventofcode.com/2016/day/11")]
         public class RadioisotopeThermoelectricGenerators : IChallenge
         {
-            public void Solve()
+            public void Solve() 
             {
                 var input = ReadAll();
                 var specs = input.Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
