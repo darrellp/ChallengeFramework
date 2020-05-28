@@ -6,7 +6,7 @@ namespace MiscChallenges.Challenges
 {
     public static partial class ChallengeClass
     {
-        [Challenge("Advent of Code", "Bathroom Security", "https://adventofcode.com/2016/day/2")]
+        [Challenge("Advent of Code 2016", "Bathroom Security (2)", "https://adventofcode.com/2016/day/2")]
         public class BathroomSecurity : IChallenge
         {
             public void Solve()

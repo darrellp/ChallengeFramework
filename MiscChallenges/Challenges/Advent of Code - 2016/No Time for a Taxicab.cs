@@ -9,7 +9,7 @@ namespace MiscChallenges.Challenges
 {
     public static partial class ChallengeClass
     {
-        [Challenge("Advent of Code", "No Time for a Taxicab", "https://adventofcode.com/2016/day/1")]
+        [Challenge("Advent of Code 2016", "No Time for a Taxicab (1)", "https://adventofcode.com/2016/day/1")]
         public class NoTimeForATaxicab : IChallenge
         {
             public void Solve()

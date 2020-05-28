@@ -8,7 +8,7 @@ namespace MiscChallenges.Challenges
 {
     public static partial class ChallengeClass
     {
-        [Challenge("Advent of Code", "Two-Factor Authentication", "https://adventofcode.com/2016/day/8")]
+        [Challenge("Advent of Code 2016", "Two-Factor Authentication (8)", "https://adventofcode.com/2016/day/8")]
         public class TwoFactorAuthentication : IChallenge
         {
             public void Solve()

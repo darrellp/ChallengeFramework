@@ -10,7 +10,7 @@ namespace MiscChallenges.Challenges
 {
     public static partial class ChallengeClass
     {
-        [Challenge("Advent of Code", "Internet Protocol Version 7", "https://adventofcode.com/2016/day/7")]
+        [Challenge("Advent of Code 2016", "Internet Protocol Version 7 (7)", "https://adventofcode.com/2016/day/7")]
         public class InternetProtocolVersion7 : IChallenge
         {
             public void Solve()

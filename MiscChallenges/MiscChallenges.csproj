@@ -74,17 +74,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Challenges\Advent of Code\Balance Bots.cs" />
-    <Compile Include="Challenges\Advent of Code\Bathroom Security.cs" />
-    <Compile Include="Challenges\Advent of Code\Explosives in Cyberspace.cs" />
-    <Compile Include="Challenges\Advent of Code\How About a Nice Game of Chess.cs" />
-    <Compile Include="Challenges\Advent of Code\Leonardos Monorail.cs" />
-    <Compile Include="Challenges\Advent of Code\No Time for a Taxicab.cs" />
-    <Compile Include="Challenges\Advent of Code\Radioisotope Thermoelectric Generators.cs" />
-    <Compile Include="Challenges\Advent of Code\Security Through Obscurity.cs" />
-    <Compile Include="Challenges\Advent of Code\Signals and Noise.cs" />
-    <Compile Include="Challenges\Advent of Code\Squares With Three Sides.cs" />
-    <Compile Include="Challenges\Advent of Code\Two-Factor Authentication.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Balance Bots.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Bathroom Security.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Explosives in Cyberspace.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\How About a Nice Game of Chess.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Leonardos Monorail.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\No Time for a Taxicab.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Radioisotope Thermoelectric Generators.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Security Through Obscurity.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Signals and Noise.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Squares With Three Sides.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Two-Factor Authentication.cs" />
     <Compile Include="Challenges\Code Chef\ChefAndStones.cs" />
     <Compile Include="Challenges\Code Chef\Drumbf For President.cs" />
     <Compile Include="Challenges\Code Chef\Test.cs" />
@@ -127,7 +127,7 @@
     <Compile Include="Challenges\UVA\Subsequence.cs" />
     <Compile Include="CppChallenge.cs" />
     <Compile Include="FsChallenge.cs" />
-    <Compile Include="Challenges\Advent of Code\Internet Protocol Version 7.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Internet Protocol Version 7.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">
