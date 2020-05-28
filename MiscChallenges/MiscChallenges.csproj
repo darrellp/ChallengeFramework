@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Challenges\Advent of Code - 2016\A Maze of Twisty Little Cubicles.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Balance Bots.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Bathroom Security.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Explosives in Cyberspace.cs" />
@@ -105,14 +106,37 @@
     <Compile Include="Challenges\Programming Challenges\CheckTheCheck.cs" />
     <Compile Include="Challenges\Programming Challenges\Collatz.cs" />
     <Compile Include="Challenges\Programming Challenges\CryptKicker.cs" />
+    <Compile Include="Challenges\Programming Challenges\Dog and Gopher.cs" />
+    <Compile Include="Challenges\Programming Challenges\EditStepLadder.cs" />
+    <Compile Include="Challenges\Programming Challenges\Erdos Numbers.cs" />
     <Compile Include="Challenges\Programming Challenges\Factovisors.cs" />
     <Compile Include="Challenges\Programming Challenges\File Fragmentation.cs" />
+    <Compile Include="Challenges\Programming Challenges\Graphical Editor.cs" />
+    <Compile Include="Challenges\Programming Challenges\Hartals.cs" />
+    <Compile Include="Challenges\Programming Challenges\HowManyFibs.cs" />
+    <Compile Include="Challenges\Programming Challenges\Interpreter.cs" />
     <Compile Include="Challenges\Programming Challenges\Is Bigger Smarter.cs" />
+    <Compile Include="Challenges\Programming Challenges\JollyJumpers.cs" />
+    <Compile Include="Challenges\Programming Challenges\Knights of the Round Table.cs" />
     <Compile Include="Challenges\Programming Challenges\LCD Display.cs" />
+    <Compile Include="Challenges\Programming Challenges\MineSweeper.cs" />
+    <Compile Include="Challenges\Programming Challenges\Ones.cs" />
     <Compile Include="Challenges\Programming Challenges\Pairsumonious Numbers.cs" />
+    <Compile Include="Challenges\Programming Challenges\Playing With Wheels.cs" />
     <Compile Include="Challenges\Programming Challenges\Poker Hands.cs" />
+    <Compile Include="Challenges\Programming Challenges\Primary Arithmetic.cs" />
+    <Compile Include="Challenges\Programming Challenges\Reverse and Add.cs" />
+    <Compile Include="Challenges\Programming Challenges\Rope Crisis in Ropeland.cs" />
+    <Compile Include="Challenges\Programming Challenges\Shoemaker.cs" />
+    <Compile Include="Challenges\Programming Challenges\SmithNumbers.cs" />
+    <Compile Include="Challenges\Programming Challenges\Stack %27em Up.cs" />
     <Compile Include="Challenges\Programming Challenges\Stern-Brocot.cs" />
     <Compile Include="Challenges\Programming Challenges\Summation of Four Primes.cs" />
+    <Compile Include="Challenges\Programming Challenges\TheMonocycle.cs" />
+    <Compile Include="Challenges\Programming Challenges\TheTrip.cs" />
+    <Compile Include="Challenges\Programming Challenges\Unidirectional TSP.cs" />
+    <Compile Include="Challenges\Programming Challenges\VitosFamily.cs" />
+    <Compile Include="Challenges\Programming Challenges\WERTYU.cs" />
     <Compile Include="Challenges\Programming Challenges\Wheres Waldorf.cs" />
     <Compile Include="Challenges\Sphere\Adding Reversed Numbers.cs" />
     <Compile Include="Challenges\Sphere\Degree Of A Tree.cs" />
@@ -129,6 +153,10 @@
     <Compile Include="FsChallenge.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Internet Protocol Version 7.cs" />
     <Compile Include="StringExtensions.cs" />
+    <Compile Include="Utilities\AStar.cs" />
+    <Compile Include="Utilities\GridLocation.cs" />
+    <Compile Include="Utilities\Hungarian.cs" />
+    <Compile Include="Utilities\PointDbl.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
