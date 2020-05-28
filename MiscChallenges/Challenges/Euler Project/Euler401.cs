@@ -31,7 +31,7 @@ namespace MiscChallenges.Challenges
 					results[d - 1] = dsqPart + divPart;
 				});
 
-				long sum = results.Sum() % R;
+				var sum = results.Sum() % R;
 #else
 			var lower = M + 1;
 
