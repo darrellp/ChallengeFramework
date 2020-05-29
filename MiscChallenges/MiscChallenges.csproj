@@ -156,6 +156,7 @@
     <Compile Include="Utilities\AStar.cs" />
     <Compile Include="Utilities\GridLocation.cs" />
     <Compile Include="Utilities\Hungarian.cs" />
+    <Compile Include="Utilities\KnuthBitops.cs" />
     <Compile Include="Utilities\PointDbl.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <Page Include="MainWindow.xaml">

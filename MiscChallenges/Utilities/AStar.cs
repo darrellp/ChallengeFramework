@@ -1,7 +1,11 @@
-﻿using System;
+﻿#define PRINTASTAR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Priority_Queue;
+#if PRINTASTAR
+using System.Diagnostics;
+#endif
 
 namespace MiscChallenges.Challenges
 {
@@ -19,8 +23,15 @@ namespace MiscChallenges.Challenges
 	/// are produced at run time and, if not required for A*, are never actually produced.  Also,
 	/// rather than enforcing some sort of rigid graph structure with edges, weights, etc. we're able
 	/// to make do with this very simple IState interface.
+	/// 
+	/// >>>> IMPORTANT!!!!
+	/// If your state derives from AStarState then it will use IsEqual for hashsets.  If not,
+	/// YOU NEED TO IMPLEMENT GetHashCode() and Equals() or you will have serious problems
+	/// (i.e., infinite loops).
 	/// </remarks>
 	////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+    // TODO: Handle the need to implement Equals() and GetHashCode() better than a note in the comments
 
 	public interface IState
 	{
@@ -38,6 +49,7 @@ namespace MiscChallenges.Challenges
 		double EstDistance(IState target);
 
 		int GetHashCode();
+
 		// ReSharper disable once UnusedMemberInSuper.Global
 		bool IsEqual(IState state);
 	}
@@ -58,12 +70,11 @@ namespace MiscChallenges.Challenges
 	{
 		public abstract IEnumerable<IState> Successors();
 		public abstract bool IsEqual(IState istate);
-		public override abstract int GetHashCode();
+		public abstract override int GetHashCode();
 
 		public override bool Equals(object obj)
 		{
-			var state = obj as AStarState;
-			if (state == null)
+            if (!(obj is AStarState state))
 			{
 				throw new ArgumentException("Bad compare with AStarState");
 			}
@@ -106,7 +117,7 @@ namespace MiscChallenges.Challenges
 		// This would involve us having no direct targets and using a distance estimation that depended
 		// solely on the current node rather than on a specific target node.
 		readonly FibonacciPriorityQueue<Pqt<AStarNode<T>>> _openSet = new FibonacciPriorityQueue<Pqt<AStarNode<T>>>();
-		readonly private HashSet<T> _targets;
+		private readonly HashSet<T> _targets;
 		private readonly HashSet<T> _closed = new HashSet<T>();
 
 		public AStar(T start, HashSet<T> targets)
@@ -117,10 +128,16 @@ namespace MiscChallenges.Challenges
 
 		public AStar(T start, T target) : this(start, new HashSet<T> { target }) { }
 
-		/// <summary>
-		/// Performs the A* algorithm to find minimum distance path.
-		/// </summary>
-		/// <returns>A list of T objects which minimizes the distance between _start and one of the _targets</returns>
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// <summary>	Performs the A* algorithm to find minimum distance path. </summary>
+		///
+		/// <remarks>	Darrell Plank, 5/28/2020. </remarks>
+		///
+		/// <returns>
+		/// A list of T objects which minimizes the distance between _start and one of the _targets.
+		/// </returns>
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		public List<T> Solve()
 		{
 			// Given an IState we need to be able to locate the corresponding
@@ -134,6 +151,10 @@ namespace MiscChallenges.Challenges
 			{
 				// Get the most likely candidate in Open
 				var curOpenNode = (AStarNode<T>)_openSet.Pop();
+
+#if PRINTASTAR
+                Debug.WriteLine($"Opening {curOpenNode.StateData.ToString()}");
+#endif
 
 				// Is it a target node?
 				if (_targets.Contains(curOpenNode.StateData))
@@ -281,5 +302,5 @@ namespace MiscChallenges.Challenges
 				return DistToNearestTarget().CompareTo(other.DistToNearestTarget());
 			}
 		}
-	}
+    }
 }
