@@ -93,7 +93,8 @@
     <Compile Include="Challenges\Dr Ecco\SmallChangeForMujikhistan.cs" />
     <Compile Include="Challenges\Euler Project\euler172.cs" />
     <Compile Include="Challenges\Euler Project\euler173.cs" />
-    <Compile Include="Challenges\Euler Project\Euler401.cs" />
+    <Compile Include="Challenges\Euler Project\euler401.cs" />
+    <Compile Include="Challenges\Euler Project\euler105.cs" />
     <Compile Include="Challenges\Hacker Earth\The Magical Shop.cs" />
     <Compile Include="Challenges\Hacker Rank\MergeList.cs" />
     <Compile Include="Challenges\Hacker Rank\nCrTable.cs" />
@@ -204,6 +205,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data Files\cipher1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data Files\matrix.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data Files\poker.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data Files\sets.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Referenced Assemblies\NumberTheoryBig.dll" />
     <Content Include="Referenced Assemblies\NumberTheoryLong.dll" />
     <Content Include="Referenced Assemblies\Priority Queue.dll" />
