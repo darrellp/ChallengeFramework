@@ -9,8 +9,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>FS_Challenges</RootNamespace>
     <AssemblyName>FS_Challenges</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <TargetFSharpCoreVersion>4.4.1.0</TargetFSharpCoreVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <Name>FS Challenges</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -33,29 +33,6 @@
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>bin\Release\FS_Challenges.XML</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NumberTheoryBig">
-      <HintPath>..\MiscChallenges\Referenced Assemblies\NumberTheoryBig.dll</HintPath>
-    </Reference>
-    <Reference Include="NumberTheoryLong">
-      <HintPath>..\MiscChallenges\Referenced Assemblies\NumberTheoryLong.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="primelist.fs" />
-    <Compile Include="myutility.fs" />
-    <Compile Include="Framework.fs" />
-    <Compile Include="Test.fs" />
-    <Compile Include="Euler247.fs" />
-    <Compile Include="Euler40.fs" />
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
@@ -72,6 +49,29 @@
     </Otherwise>
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
+  <ItemGroup>
+    <Compile Include="primelist.fs" />
+    <Compile Include="myutility.fs" />
+    <Compile Include="Framework.fs" />
+    <Compile Include="Test.fs" />
+    <Compile Include="Euler247.fs" />
+    <Compile Include="Euler40.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NumberTheoryBig">
+      <HintPath>..\MiscChallenges\Referenced Assemblies\NumberTheoryBig.dll</HintPath>
+    </Reference>
+    <Reference Include="NumberTheoryLong">
+      <HintPath>..\MiscChallenges\Referenced Assemblies\NumberTheoryLong.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

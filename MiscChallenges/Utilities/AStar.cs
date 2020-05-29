@@ -1,5 +1,4 @@
-﻿#define PRINTASTAR
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Priority_Queue;
@@ -14,7 +13,7 @@ namespace MiscChallenges.Challenges
 	///
 	/// <remarks>
 	/// This algorithm works with the concept of states and successors rather that the usual graph
-	/// nomenclature for A*.  This is because I find the notion of "graph" to be more abstract than
+	/// nomenclature for A*.  This is because I find the notion of "graph" to be more concrete than
 	/// necessary for most A* problems.  Also, when using a graph we have to implement a graph data
 	/// structure and then populate that structure fully to pass to the A* algorithm.  This is quite
 	/// often unnecessary and wasteful since a large portion of the graph may never be traversed.

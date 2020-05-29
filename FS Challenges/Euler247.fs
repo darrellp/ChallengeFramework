@@ -59,7 +59,7 @@ let anAnswer =
     |> Seq.map (fun i -> addNextNodes(i))
     |> Seq.filter (fun an -> an.cBelow = 3 && an.cLeft = 3)
     // There are 20 nodes below or equal to (3,3) (6 choose 3)
-    |> Seq.nth 19
+    |> Seq.item 19
 
 let answer = anAnswer.INode
 

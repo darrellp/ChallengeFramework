@@ -79,7 +79,12 @@ namespace MiscChallenges
 		}
 
 		private IEnumerable<ChallengeInfo> GatherFSChallengeInfo()
-		{
+        {
+            var f1 = Assembly.GetAssembly(typeof(FS_Challenges));
+            var f2 = f1.GetTypes();
+            var f3 = f2.Select(FsMethodTest);
+            var f4 = f3.Where(t => t != null);
+            var l4 = f4.ToList();
 			return Assembly.GetAssembly(typeof(FS_Challenges)).GetTypes().
 				Select(FsMethodTest).
 				Where(t => t != null)

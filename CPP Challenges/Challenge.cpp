@@ -27,7 +27,10 @@ char* StringReturn(const char *in)
 {
 	ULONG ulSize = strlen(in) + sizeof(char);
 	char* pszReturn = (char*)::CoTaskMemAlloc(ulSize);
-	strcpy(pszReturn, in);
+	if (pszReturn != NULL)
+	{
+		strcpy(pszReturn, in);
+	}
 	return pszReturn;
 }
 
