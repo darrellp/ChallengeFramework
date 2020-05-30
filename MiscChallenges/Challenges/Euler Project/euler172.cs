@@ -5,8 +5,8 @@ namespace MiscChallenges.Challenges
 {
 	public static partial class ChallengeClass
 	{
-		[Challenge("Euler Project", "Prob 172", "https://projecteuler.net/problem=172")]
-		// ReSharper disable once InconsistentNaming
+		[Challenge("Euler Project", "Prob 172",
+            "https://projecteuler.net/problem=172")]
 		public class Euler172 : IChallenge
 		{
 			public void Solve()

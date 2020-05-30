@@ -95,6 +95,9 @@
     <Compile Include="Challenges\Euler Project\euler173.cs" />
     <Compile Include="Challenges\Euler Project\euler401.cs" />
     <Compile Include="Challenges\Euler Project\euler105.cs" />
+    <Compile Include="Challenges\Euler Project\euler43.cs" />
+    <Compile Include="Challenges\Euler Project\euler44.cs" />
+    <Compile Include="Challenges\Euler Project\euler49.cs" />
     <Compile Include="Challenges\Hacker Earth\The Magical Shop.cs" />
     <Compile Include="Challenges\Hacker Rank\MergeList.cs" />
     <Compile Include="Challenges\Hacker Rank\nCrTable.cs" />
