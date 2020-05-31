@@ -16,7 +16,7 @@ namespace MiscChallenges.Challenges
                 var prefix = "ffykfhsq";
                 var initVals = Enumerable
                     .Range(0, int.MaxValue)
-                    .Select(n => new {n, v = CalculateMd5Hash(prefix + n) })
+                    .Select(n => new {n, v = CalculateMd5HashString(prefix + n) })
                     .Where(s => s.v.StartsWith("00000"))
                     .Take(8)
                     .ToArray();
@@ -32,7 +32,7 @@ namespace MiscChallenges.Challenges
                 var interesting = initVals
                     .Select(t => t.v).Concat(Enumerable
                         .Range(initVals[7].n + 1, 100000000)
-                        .Select(n => CalculateMd5Hash(prefix + n))
+                        .Select(n => CalculateMd5HashString(prefix + n))
                         .Where(s => s.StartsWith("00000")))
                     .Where(s => '0' <= s[5] && s[5] < '8' && charsArray[s[5] - '0'] == ' ');
 

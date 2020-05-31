@@ -39,6 +39,7 @@ namespace MiscChallenges.Challenges
                         .Select(i =>
                             letterDictionaries[i]
                                 .MaxBy(kvp => kvp.Value)
+                                .First()
                                 .Key)
                         .ToArray());
                 WriteLine(output);
@@ -49,6 +50,7 @@ namespace MiscChallenges.Challenges
                         .Select(i =>
                             letterDictionaries[i]
                                 .MinBy(kvp => kvp.Value)
+                                .First()
                                 .Key)
                         .ToArray());
                 WriteLine(output);
