@@ -86,6 +86,7 @@
     <Compile Include="Challenges\Advent of Code - 2016\Security Through Obscurity.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Signals and Noise.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Squares With Three Sides.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Timing Is Everything.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Two-Factor Authentication.cs" />
     <Compile Include="Challenges\Code Chef\ChefAndStones.cs" />
     <Compile Include="Challenges\Code Chef\Drumbf For President.cs" />
