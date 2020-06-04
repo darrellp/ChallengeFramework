@@ -228,6 +228,10 @@
     <Content Include="Referenced Assemblies\Priority Queue.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ChallengesNetStandard\ChallengesNetStandard.csproj">
+      <Project>{11556f2c-b1d7-4399-afbd-b70fabc994ae}</Project>
+      <Name>ChallengesNetStandard</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FS Challenges\FS Challenges.fsproj">
       <Project>{5666d73e-1aa5-453f-ad4e-8de93671a875}</Project>
       <Name>FS Challenges</Name>

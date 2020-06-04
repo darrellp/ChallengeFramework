@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using MiscChallenges.Challenges;
+using ChallengesNetStandard;
 
 namespace MiscChallenges
 {
@@ -48,6 +49,8 @@ namespace MiscChallenges
 				Where(t => t != null)
 				.ToList();
 
+            var std = NetStdUtilities.RetrieveChallenges().Select(NetStandardToFrameworkChallengeInfo);
+            challenges.AddRange(std);
 			challenges.AddRange(ParseCppChallengeInfo(GatherChallengeInfo()));
 			challenges.AddRange(GatherFSChallengeInfo());
 
@@ -77,6 +80,40 @@ namespace MiscChallenges
 				tvChallenges.Items.Add(item);
 			}
 		}
+
+        private ChallengeInfo NetStandardToFrameworkChallengeInfo(ChallengeInfoStd challenge)
+        {
+            return new ChallengeInfo(
+                challenge.Name, 
+                challenge.Contest, 
+                new NetStdAdapter(challenge.Challenge), 
+                challenge.Uri);
+        }
+
+        private class NetStdAdapter : IChallenge
+        {
+            private ChallengesNetStandard.IChallenge _challenge;
+
+            public NetStdAdapter(ChallengesNetStandard.IChallenge challenge)
+            {
+                _challenge = challenge;
+            }
+
+            public void Solve()
+            {
+                _challenge.Solve();
+            }
+
+            public string RetrieveSampleInput()
+            {
+                return _challenge.RetrieveSampleInput();
+            }
+
+            public string RetrieveSampleOutput()
+            {
+                return _challenge.RetrieveSampleOutput();
+            }
+        }
 
 		private IEnumerable<ChallengeInfo> GatherFSChallengeInfo()
         {

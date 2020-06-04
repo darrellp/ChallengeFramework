@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscChallenges", "MiscChallenges\MiscChallenges.csproj", "{11AE00D6-FE89-469E-B401-2E9B06D3C7C1}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -11,6 +11,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP Challenges", "CPP Challenges\CPP Challenges.vcxproj", "{123750FA-8DFD-4FFC-97B2-E409386E019B}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FS Challenges", "FS Challenges\FS Challenges.fsproj", "{5666D73E-1AA5-453F-AD4E-8DE93671A875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChallengesNetStandard", "ChallengesNetStandard\ChallengesNetStandard.csproj", "{11556F2C-B1D7-4399-AFBD-B70FABC994AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,11 +54,24 @@ Global
 		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5666D73E-1AA5-453F-AD4E-8DE93671A875}.Release|Win32.ActiveCfg = Release|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Debug|Win32.Build.0 = Debug|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Release|Win32.ActiveCfg = Release|Any CPU
+		{11556F2C-B1D7-4399-AFBD-B70FABC994AE}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {6EA2DF3D-C39A-413D-A139-2F876D99DA11}
 	EndGlobalSection
 EndGlobal
