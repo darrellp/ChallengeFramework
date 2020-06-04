@@ -6,11 +6,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MiscChallenges")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Framework for doing coding challenge type problems")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard Company")]
+[assembly: AssemblyCompany("Darrell Plank")]
 [assembly: AssemblyProduct("MiscChallenges")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2015")]
+[assembly: AssemblyCopyright("Copyright Darrell Plank")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

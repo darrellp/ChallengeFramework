@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Windows.Documents;
-using MoreLinq;
 using RegexStringLibrary;
 using NumberTheoryLong;
 using static System.Console;

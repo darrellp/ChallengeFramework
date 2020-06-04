@@ -77,6 +77,7 @@
     <Compile Include="Challenges\Advent of Code - 2016\A Maze of Twisty Little Cubicles.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Balance Bots.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Bathroom Security.cs" />
+    <Compile Include="Challenges\Advent of Code - 2016\Dragon Checksum.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Explosives in Cyberspace.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\How About a Nice Game of Chess.cs" />
     <Compile Include="Challenges\Advent of Code - 2016\Leonardos Monorail.cs" />
